@@ -1,1 +1,50 @@
-function a0_0x2dcd(){const _0x14bea1=['3281166RujvMh','speed','ms\x0a│\x20⚉\x20\x20_online_\x0a╰─\x20𓄄\x20```','491612FPajmp','remoteJid','4741552UdwbHC','composing','1813INqSxV','╭─❍\x20*PONG!*\x0a│\x20❏\x20','21613YBuDal','2-digit','3270685MAugTl','6894FhnPUB','sendPresenceUpdate','now','toLocaleTimeString','Africa/Lagos','```','12ttYrZC','numeric','Check\x20bot\x20response\x20speed','latency','4LrApqf','ping','20786390TkBvru','key','sendMessage','11RQKBRa'];a0_0x2dcd=function(){return _0x14bea1;};return a0_0x2dcd();}const a0_0xc88710=a0_0x1063;function a0_0x1063(_0x689590,_0xe79f){_0x689590=_0x689590-0x1da;const _0x2dcd0d=a0_0x2dcd();let _0x1063ff=_0x2dcd0d[_0x689590];return _0x1063ff;}(function(_0x30601f,_0x4a172c){const _0xb16cfc=a0_0x1063,_0x5bccdc=_0x30601f();while(!![]){try{const _0x55663c=-parseInt(_0xb16cfc(0x1e2))/0x1*(parseInt(_0xb16cfc(0x1ef))/0x2)+parseInt(_0xb16cfc(0x1eb))/0x3*(-parseInt(_0xb16cfc(0x1dc))/0x4)+-parseInt(_0xb16cfc(0x1e4))/0x5+-parseInt(_0xb16cfc(0x1e5))/0x6*(parseInt(_0xb16cfc(0x1e0))/0x7)+-parseInt(_0xb16cfc(0x1de))/0x8+parseInt(_0xb16cfc(0x1f5))/0x9+-parseInt(_0xb16cfc(0x1f1))/0xa*(-parseInt(_0xb16cfc(0x1f4))/0xb);if(_0x55663c===_0x4a172c)break;else _0x5bccdc['push'](_0x5bccdc['shift']());}catch(_0x3bca12){_0x5bccdc['push'](_0x5bccdc['shift']());}}}(a0_0x2dcd,0x58db1),module['exports']={'name':a0_0xc88710(0x1f0),'alias':[a0_0xc88710(0x1da),'test',a0_0xc88710(0x1ee)],'desc':a0_0xc88710(0x1ed),'category':'Bot','reactions':{'start':'♻️','success':'✨'},'execute':async(_0x636e04,_0x611335,{reply:_0x200ceb})=>{const _0x40d3cd=a0_0xc88710,_0xe19264=Date['now']();await _0x636e04[_0x40d3cd(0x1e6)](_0x40d3cd(0x1df),_0x611335[_0x40d3cd(0x1f2)]['remoteJid']),await _0x636e04[_0x40d3cd(0x1f3)](_0x611335[_0x40d3cd(0x1f2)][_0x40d3cd(0x1dd)],{'text':'✪\x20_Pinging..._'},{'quoted':_0x611335});const _0x2620fc=Date[_0x40d3cd(0x1e7)]()-_0xe19264,_0x239c1f=new Date(),_0xbc98bd=_0x239c1f[_0x40d3cd(0x1e8)]('en-US',{'hour':_0x40d3cd(0x1ec),'minute':_0x40d3cd(0x1e3),'second':'2-digit','hour12':!![],'timeZone':_0x40d3cd(0x1e9)})['toLowerCase'](),_0x270e74=_0x40d3cd(0x1e1)+_0x2620fc+_0x40d3cd(0x1db)+_0xbc98bd+_0x40d3cd(0x1ea);await _0x200ceb(_0x270e74),await _0x636e04[_0x40d3cd(0x1e6)]('available',_0x611335[_0x40d3cd(0x1f2)]['remoteJid']);}});
+
+const { getByCategory, getAll } = require('../../Plugin/crysCmd');
+const { getVar } = require('../../Plugin/configManager');
+const fs = require("fs");
+const path = require("path");
+const axios = require("axios");
+const os = require("os");
+
+module.exports = {
+    name: 'ping',
+    alias: ['speed', 'test', 'latency'],
+    desc: 'Check bot response speed',
+    category: 'Bot',
+    reactions: {
+        start: '♻️',
+        success: '✨'
+    },
+
+    execute: async (sock, m, { prefix, config, reply }) => {
+        const startTime = Date.now();
+
+        await sock.sendPresenceUpdate('composing', m.key.remoteJid);
+
+        await sock.sendMessage(m.key.remoteJid, { text: '✪ _Pinging..._' }, { quoted: m });
+
+        const latency = Date.now() - startTime;
+        const now = new Date();
+        const time = now.toLocaleTimeString('en-US', {
+            hour: 'numeric',
+            minute: '2-digit',
+            second: '2-digit',
+            hour12: true,
+            timeZone: 'Africa/Lagos'
+        }).toLowerCase();
+
+        let responseText = `╔═══〔 ❍ *PONG!* ❍ 〕══❒\n`;
+        responseText += `║╭───────────────◆\n`;
+        responseText += `║│ ❍ *LATENCY:* ${latency}ms\n`;
+        responseText += `║│ ❍ *STATUS:* Online\n`;
+        responseText += `║╰───────────────◆\n`;
+        responseText += `╚══════════════════❒\n`;
+        responseText += ` ╰─ 🥏 \`\`\`${time}\`\`\``;
+
+        await reply(responseText);
+
+        await sock.sendPresenceUpdate('available', m.key.remoteJid);
+    }
+};
+
+
