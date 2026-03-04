@@ -42,7 +42,7 @@ module.exports = {
         responseText += `║│ ❍ *STATUS:* Online\n`;
         responseText += `║╰───────────────◆\n`;
         responseText += `╚══════════════════❒\n`;
-        responseText += ` ╰─ 𓄄 \`\`\`${time}\`\`\``;
+        responseText += ` ╰─ 🥏 \`\`\`${time}\`\`\``;
 
         await reply(responseText);
     }
