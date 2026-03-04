@@ -10,11 +10,11 @@ module.exports = {
 
  execute: async (sock, m, { args, reply }) => {
  try {
- if (!args.length) return reply('⚉ Provide text');
+ if (!args.length) return reply('🥏 Provide text');
 
  figlet(args.join(' '), function (err, data) {
  if (err) return reply('✘ ASCII generation failed.');
- reply(`⚉\n${data}`);
+ reply(`🥏\n${data}`);
  });
  } catch (err) {
  console.error('✘ ASCII Error:', err.message);
