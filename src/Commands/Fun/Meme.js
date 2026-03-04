@@ -50,7 +50,7 @@ module.exports = {
 │ 🐕 Cheems Meme Loaded
 │
 │ Use buttons below
-╰─𓄄 Powered by 𝗖𝗢𝗗𝗘𝗫 𝐀𝐈
+╰─🥏 Powered by 𝗖𝗢𝗗𝗘𝗫 𝐀𝐈
             `.trim();
 
             await sock.sendMessage(
