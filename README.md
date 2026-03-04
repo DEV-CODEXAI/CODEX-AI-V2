@@ -25,7 +25,7 @@ x## ✦ CODEX AI V2.2.7
 
 <p align="center">
   <strong>CODEX AI V2</strong><br>
-  <em>Professional WhatsApp Bot • Built by crysnovax</em>
+  <em>Professional WhatsApp Bot • Built by codex</em>
 </p>
 A modular WhatsApp bot built using Node.js and Baileys — the perfect foundation for my YouTube tutorial series.  
 This is a More integrated version of CODEX AI V1.0 with Amazing Customizable features tagging along the much more established WhatsApp bot.
