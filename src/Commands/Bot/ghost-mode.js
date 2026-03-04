@@ -93,7 +93,7 @@ module.exports = {
             );
         }
 
-        reply('⚉ Invalid. Use .ghost on | off | status');
+        reply('🥏 Invalid. Use .ghost on | off | status');
     }
 };
 
