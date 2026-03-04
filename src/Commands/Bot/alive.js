@@ -1,3 +1,4 @@
+
 module.exports = {
     name: 'alive',
     alias: ['online', 'status'],
@@ -8,6 +9,22 @@ module.exports = {
         const h  = Math.floor(up / 3600);
         const mn = Math.floor((up % 3600) / 60);
         const s  = up % 60;
-        await reply(`╔═══════════════════╗\n║  BOT STATUS       ║\n╚═══════════════════╝\n\n✅ *Status:* Online\n⏱️ *Uptime:* ${h}h ${mn}m ${s}s\n📊 *Messages:* ${global.crysStats.messages}\n⚡ *Commands:* ${global.crysStats.commands}\n🤖 *Version:* 2.0.0\n\n_CRYSNOVA AI V2 - Professional_`);
+
+        let statusText = `╔═══〔 ❍ *CODEX AI* ❍ 〕══❒\n`;
+        statusText += `║╭───────────────◆\n`;
+        statusText += `║│ ❍ *STATUS:* Online\n`;
+        statusText += `║│ ❍ *UPTIME:* ${h}h ${mn}m ${s}s\n`;
+        statusText += `║│ ❍ *MSGS:* ${global.crysStats.messages}\n`;
+        statusText += `║│ ❍ *CMDS:* ${global.crysStats.commands}\n`;
+        statusText += `║│ ❍ *VER:* 2.0.0\n`;
+        statusText += `║╰───────────────◆\n`;
+        statusText += `╚══════════════════❒\n\n`;
+        statusText += `*CRYSNOVA AI V2 - Professional*`;
+
+        await reply(statusText);
     }
 };
+
+
+
+
