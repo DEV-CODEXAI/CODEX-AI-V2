@@ -10,17 +10,17 @@ module.exports = {
      // ⭐ Reaction config
     reactions: {
         start: '📝',
-        success: '💫'
+        success: '🪄'
     },
      
 
     execute: async (sock, m, { reply }) => {
         if (!m.quoted || !m.quoted.mtype?.includes('image')) {
-            return reply('⚉ _*Reply to an image*_');
+            return reply(' _*Reply to an image*_');
         }
 
         try {
-            await reply('✪ _*Creating pencil sketch...*_');
+            await reply('🪄 _*Creating pencil sketch...*_');
 
             const buffer = await m.quoted.download();
             if (!buffer || buffer.length < 1000) {
