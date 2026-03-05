@@ -19,7 +19,7 @@ module.exports = {
         statusText += `║│ ❍ *VER:* 2.0.0\n`;
         statusText += `║╰───────────────◆\n`;
         statusText += `╚══════════════════❒\n\n`;
-        statusText += `*CRYSNOVA AI V2 - Professional*`;
+        statusText += `*CODEX AI V2 - Professional*`;
 
         await reply(statusText);
     }
