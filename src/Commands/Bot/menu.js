@@ -92,11 +92,11 @@ module.exports = {
         }
         text += `╔═══〔 ❍ *DEVELOPER* ❍ 〕═══❒\n`;
         text += `║╭───────────────◆\n`;
-        text += `║│ ✰ 𝗖𝗢𝗗𝗘𝗫 𝐀𝐈\n`;
+        text += `║│ ✰ 𝗖𝗢𝗗𝗘𝗫\n`;
         text += `║│ ➤ VERSION : 2.0.0\n`;
         text += `║╰───────────────◆\n`;
         text += `╚══════════════════❒\n`;
-        text += ` ╰─ 𓄄 \`\`\`${time}\`\`\``;
+        text += ` ╰─ 🥏 \`\`\`${time}\`\`\``;
 
         const imagePath = path.join(__dirname, "../../assets/menu.png");
         async function getMenuImage() {
