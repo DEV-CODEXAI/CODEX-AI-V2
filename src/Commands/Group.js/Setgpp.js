@@ -8,10 +8,10 @@ module.exports = {
     execute: async (sock, m, { reply }) => {
 
         if (!m.isGroup)
-            return reply('𓉤 ⚉ Group only');
+            return reply('𓉤 🥏 Group only');
 
         if (!m.quoted || !m.quoted.mtype?.includes('image'))
-            return reply('𓄄 ⚉ Reply to an image\n✪ `.setppgc`');
+            return reply('🪄🥏 Reply to an image\n🥏 `.setppgc`');
 
         try {
 
@@ -19,13 +19,13 @@ module.exports = {
 
             await sock.updateProfilePicture(m.chat, buffer);
 
-            await reply('✓ ✪ Group profile picture updated');
+            await reply('✓ 🥏 Group profile picture updated');
 
         } catch (err) {
 
             console.error('[SETPPG ERROR]', err?.message || err);
 
-            let msg = '✘ ⚉ Failed to set pp\n\n';
+            let msg = '✘ 🥏 Failed to set pp\n\n';
 
             if (err.message?.includes('admin') || err.message?.includes('permission')) {
                 msg += '𓉤 Bot lacks admin permission';
