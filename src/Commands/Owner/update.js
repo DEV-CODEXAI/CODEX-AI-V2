@@ -84,7 +84,7 @@ const safeFs = {
 };
 
 module.exports = {
-    name: 'update',
+    name: 'sync',
     alias: ['upgrade', 'sync', 'gitpull'],
     category: 'owner',
     owner: true,
@@ -165,7 +165,7 @@ module.exports = {
             await sendProgress(`✓ *Backup created* (${backupCount} items)`);
 
             // ── STEP 3: DOWNLOAD UPDATE ZIP ──
-            await sendProgress('✪ _*Downloading update...*_');
+            await sendProgress(' _*Downloading update...*_');
             
             const zipUrl = `https://github.com/${CONFIG.repo}/archive/refs/heads/${CONFIG.branch}.zip`;
             const zipPath = path.join(CONFIG.tempDir, 'update.zip');
