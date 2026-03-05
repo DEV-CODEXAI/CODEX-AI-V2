@@ -70,7 +70,7 @@ module.exports = {
 
         if (cmd === 'online') {
             if (alwaysOnlineEnabled) {
-                return reply('⚉ _Bot is already in_ **always online** _mode_');
+                return reply(' _Bot is already in_ **always online** _mode_');
             }
 
             alwaysOnlineEnabled = true;
@@ -78,9 +78,9 @@ module.exports = {
             startPresenceLoop(sock);
 
             await reply(
-                '✪ `Always Online mode activated`\n\n' +
+                ' `Always Online mode activated`\n\n' +
                 '**Bot will now appear online 24/7 while connected**.\n' +
-                '_*Turn off with*_: _.offline_'
+                '_*Disable with*_: _.offline_'
             );
 
             await sock.sendMessage(m.chat, {
@@ -89,7 +89,7 @@ module.exports = {
 
         } else if (cmd === 'offline') {
             if (!alwaysOnlineEnabled) {
-                return reply('𓉤 **Always online mode is already off**');
+                return reply(' **Always online mode is already off**');
             }
 
             alwaysOnlineEnabled = false;
@@ -100,7 +100,7 @@ module.exports = {
             await sock.sendPresenceUpdate('available');
 
             await reply(
-                '𓄄 `Always Online mode disabled`\n\n' +
+                ' `Always Online mode disabled`\n\n' +
                 '_*Bot now shows normal presence (online when active, unavailable when idle)*_.'
             );
 
