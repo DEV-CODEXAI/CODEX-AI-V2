@@ -9,18 +9,21 @@ module.exports = {
         success: '✨'
     },
     execute: async (sock, m, { reply, config }) => {
-        const infoMessage = `╔═══〔 ❍ *CODEX V2.0* ❍ 〕═══❒\n` +
+        const repoLink = config.repo || (config.settings && config.settings.repo) || 'https://github.com/DEV-CODEXAI/CODEX-AI-V2';
+        const botTitle = (config.settings && config.settings.title) || 'CODEX AI';
+
+        const infoMessage = `╔═══〔 ❍ **CODEX V2.0** ❍ 〕═══❒\n` +
             `║╭───────────────◆\n` +
-            `║│ 🤖 *Bot:* ${config.settings.title}\n` +
-            `║│ 👑 *Owner:* ✦ 𝗖𝗢𝗗𝗘𝗫\n` +
-            `║│ ⚡ *Version:* 2.0.0\n` +
-            `║│ 🌐 *Library:* Baileys\n` +
-            `║│ 📦 *CMDS:* crysnovax styles\n` +
-            `║│ 🔗 *Connection:* 𝗖𝗢𝗗𝗘𝗫 𝐨𝐟𝐟𝐢𝐜𝐢𝐚𝐥 V1.0\n` +
+            `║│ 🤖 **Bot:** ${botTitle}\n` +
+            `║│ 👑 **Owner:** ✦ **CODEX**\n` +
+            `║│ ⚡ **Version:** 2.0.0\n` +
+            `║│ 🌐 **Library:** Baileys\n` +
+            `║│ 📦 **CMDS:** crysnovax styles\n` +
+            `║│ 🔗 **Connection:** **CODEX** official V1.0\n` +
             `║╰───────────────◆\n` +
             `╚══════════════════❒\n\n` +
-            `📢 Channel: https://whatsapp.com/channel/0029Vb6sMEy96H4VI2w3I50F\n` +
-            `🐙 GitHub: ${config.settings.repo}`;
+            `📢 **Channel:** https:whatsapp.com/channel/0029Vb6sMEy96H4VI2w3I50F\n` +
+            `🐙 **GitHub:** ${repoLink}`;
 
         await reply(infoMessage);
     }
