@@ -1,3 +1,4 @@
+
 const axios = require("axios");
 
 /* ===============================
@@ -34,17 +35,15 @@ module.exports = {
     name: "weather",
     alias: ["wthr", "forecast"],
     category: "tools",
-     // ⭐ Reaction config
     reactions: {
         start: '⛅',
         success: '✨'
     },
-    
 
     execute: async (sock, m, { args, reply }) => {
 
         const city = args.join(" ").trim();
-        if (!city) return reply("⚉ Please provide a city name.");
+        if (!city) return reply("🥏 ⚉ Please provide a city name.");
 
         try {
 
@@ -58,22 +57,21 @@ module.exports = {
 
             const emoji = getWeatherEmoji(data.weather[0].main);
 
-            const weatherText = `
-${emoji}
-
-╭─❍ *✦𝗖𝗢𝗗𝗘𝗫 WEATHER*
-│ 📍 ${data.name}, ${data.sys.country}
-│ ${emoji} ${data.weather[0].description}
-│
-│ 🌡️ Temp: ${data.main.temp}°C
-│ 🤒 Feels: ${data.main.feels_like}°C
-│ 💧 Humidity: ${data.main.humidity}%
-│ 🌬️ Wind: ${data.wind.speed} m/s
-│ 📊 Pressure: ${data.main.pressure} hPa
-│
-│ 🌐 ${data.coord.lat}, ${data.coord.lon}
-╰─𓄄 Powered by Crysnova
-            `.trim();
+            let weatherText = `╔═══〔 ❍WEATHER REPORT❍ 〕=❒\n`;
+            weatherText += `║╭───────────────◆\n`;
+            weatherText += `║│ 📍 LOCATION: ${data.name}, ${data.sys.country}\n`;
+            weatherText += `║│ ${emoji} CONDITION: ${data.weather[0].description}\n`;
+            weatherText += `║│\n`;
+            weatherText += `║│ 🌡️ TEMP: ${data.main.temp}°C\n`;
+            weatherText += `║│ 🤒 FEELS: ${data.main.feels_like}°C\n`;
+            weatherText += `║│ 💧 HUMIDITY: ${data.main.humidity}%\n`;
+            weatherText += `║│ 🌬️ WIND: ${data.wind.speed} m/s\n`;
+            weatherText += `║│ 📊 PRESSURE: ${data.main.pressure} hPa\n`;
+            weatherText += `║│\n`;
+            weatherText += `║│ 🌐 COORDS: ${data.coord.lat}, ${data.coord.lon}\n`;
+            weatherText += `║╰───────────────◆\n`;
+            weatherText += `╚══════════════════❒\n`;
+            weatherText += ` ╰─ 𓄄 \`\`\`*powered by codex\`\`\``;
 
             await sock.sendMessage(
                 m.key.remoteJid,
@@ -85,7 +83,9 @@ ${emoji}
 
         } catch (error) {
             console.error("Weather Error:", error.response?.data || error.message);
-            await reply("❌ Unable to fetch weather right now. Check city name.");
+            await reply("🥏 Unable to fetch weather right now. Check city name.");
         }
     }
 };
+
+
