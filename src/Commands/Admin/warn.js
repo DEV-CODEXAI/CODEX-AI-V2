@@ -29,7 +29,7 @@ module.exports = {
     execute: async (sock, m, { args, reply }) => {
 
         if (!m.isGroup)
-            return reply('𓉤 ⚉ Group only');
+            return reply(' Group only');
 
         const cmd = m.body.toLowerCase().split(/\s+/)[0].slice(1);
         const groupJid = m.chat;
@@ -40,10 +40,10 @@ module.exports = {
         } else if (args[0]) {
             const number = args[0].replace(/[^0-9]/g, '');
             if (number.length < 10)
-                return reply('✘ ⚉ Invalid number');
+                return reply('✘ Invalid number');
             target = number + '@s.whatsapp.net';
         } else {
-            return reply('𓄄 ⚉ Tag user\n✪ `.warn @user [reason]` or `.resetwarn @user`');
+            return reply(' Tag user\n `.warn @user [reason]` or `.resetwarn @user`');
         }
 
         if (!warns[groupJid]) warns[groupJid] = {};
@@ -57,10 +57,10 @@ module.exports = {
 
             saveWarns();
 
-            await reply(`✓ ✪ Warned @${target.split('@')[0]} (${count}/3)`);
+            await reply(`✓ Warned @${target.split('@')[0]} (${count}/3)`);
 
             await sock.sendMessage(m.chat, {
-                text: `✪ Warning ${count}/3\nReason: ${reason}`,
+                text: ` Warning ${count}/3\nReason: ${reason}`,
                 mentions: [target]
             });
 
@@ -68,13 +68,13 @@ module.exports = {
                 try {
                     await sock.groupParticipantsUpdate(m.chat, [target], 'remove');
                     await sock.sendMessage(m.chat, {
-                        text: `✪ @${target.split('@')[0]} kicked (3 warns)`,
+                        text: ` @${target.split('@')[0]} kicked (3 warns)`,
                         mentions: [target]
                     });
                     delete warns[groupJid][target];
                     saveWarns();
                 } catch (e) {
-                    reply('✘ ⚉ Kicked failed — check bot admin rights');
+                    reply('✘ Kicked failed — check bot admin rights');
                 }
             }
 
@@ -84,17 +84,17 @@ module.exports = {
         if (cmd === 'resetwarn') {
 
             if (!warns[groupJid][target]) {
-                return reply(`✘ ⚉ @${target.split('@')[0]} has no warns`);
+                return reply(`✘ @${target.split('@')[0]} has no warns`);
             }
 
             delete warns[groupJid][target];
             saveWarns();
 
-            await reply(`✓ ✪ Warns reset for @${target.split('@')[0]}`);
+            await reply(`🏵️ Warns reset for @${target.split('@')[0]}`);
 
             return;
         }
 
-        reply('✘ ⚉ Invalid\nUse: .warn @user [reason] | .resetwarn @user');
+        reply('✘ Invalid\nUse: .warn @user [reason] | .resetwarn @user');
     }
 };
