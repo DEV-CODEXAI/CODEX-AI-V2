@@ -39,18 +39,18 @@ module.exports = {
             if (command === '.vv' && args[0] === 'set' && args[1]) {
                 reactionTriggers[sender] = args[1];
                 saveTriggers();
-                return reply(`╔═══〔 ❍ *CODEX AI* ❍ 〕═══❒\n║╭───────────────◆\n║│ ✓ Reaction trigger set: ${args[1]}\n║╰───────────────◆\n╚══════════════════❒`);
+                return reply(`✦ 𝘾𝞗𝘿𝞢𝙓 𝘼𝙄\n✓ 𝙍𝙚𝙖𝙘𝙩𝙞𝙤𝙣 𝙩𝙧𝙞𝙜𝙜𝙚𝙧 𝙨𝙚𝙩: ${args[1]}`);
             }
 
             let quoted = m.message?.extendedTextMessage?.contextInfo?.quotedMessage;
-            if (!quoted) return reply(`╔═══〔 ❍ *CODEX AI* ❍ 〕═══❒\n║╭───────────────◆\n║│ ✘ Reply to a view-once message.\n║╰───────────────◆\n╚══════════════════❒`);
+            if (!quoted) return reply(`✦ 𝘾𝞗𝘿𝞢𝙓 𝘼𝙄\n✘ 𝙍𝙚𝙥𝙡𝙮 𝙩𝙤 𝙖 𝙫𝙞𝙚𝙬-𝙤𝙣𝙘𝙚 𝙢𝙚𝙨𝙨𝙖𝙜𝙚.`);
 
             if (quoted.ephemeralMessage) quoted = quoted.ephemeralMessage.message;
             if (quoted.viewOnceMessage) quoted = quoted.viewOnceMessage.message;
 
             const mimeType = Object.keys(quoted)[0];
             if (!['imageMessage', 'videoMessage', 'stickerMessage'].includes(mimeType)) {
-                return reply(`╔═══〔 ❍ *CODEX AI* ❍ 〕═══❒\n║╭───────────────◆\n║│ ✘ Only view-once media supported.\n║╰───────────────◆\n╚══════════════════❒`);
+                return reply(`✦ 𝘾𝞗𝘿𝞢𝙓 𝘼𝙄\n✘ 𝙊𝙣𝙡𝙮 𝙫𝙞𝙚𝙬-𝙤𝙣𝙘𝙚 𝙢𝙚𝙙𝙞𝙖 𝙨𝙪𝙥𝙥𝙤𝙧𝙩𝙚𝙙.`);
             }
 
             const stream = await downloadContentFromMessage(
@@ -68,21 +68,22 @@ module.exports = {
             if (command === '.vvp') {
                 await sock.sendMessage(sender, { 
                     [mediaType]: buffer, 
-                    caption: `╔═══〔 ❍ *CODEX AI* ❍ 〕═══❒\n║ ✓ View-once saved privately.\n╚══════════════════❒` 
+                    caption: `✦ 𝘾𝞗𝘿𝞢𝙓 𝘼𝙄\n✓ 𝙑𝙞𝙚𝙬-𝙤𝙣𝙘𝙚 𝙨𝙖𝙫𝙚𝙙 𝙥𝙧𝙞𝙫𝙖𝙩𝙚𝙡𝙮.` 
                 });
-                return reply(`╔═══〔 ❍ *CODEX AI* ❍ 〕═══❒\n║╭───────────────◆\n║│ ✓ Sent to your DM.\n║╰───────────────◆\n╚══════════════════❒`);
+                return reply(`✦ 𝘾𝞗𝘿𝞢𝙓 𝘼𝙄\n✓ 𝗶𝗺𝗮𝗴𝗲 𝙎𝙚𝙣𝙩 𝙩𝙤 𝙮𝙤𝙪𝙧 𝘿𝙈.`);
             } else {
                 await sock.sendMessage(m.chat, { 
                     [mediaType]: buffer, 
-                    caption: `╔═══〔 ❍ *CODEX AI* ❍ 〕═══❒\n║ ✓ View-once decrypted.\n╚══════════════════❒` 
+                    caption: `✦ 𝘾𝞗𝘿𝞢𝙓 𝘼𝙄\n✓ 𝙑𝙞𝙚𝙬-𝙤𝙣𝙘𝙚 𝙙𝙚𝙘𝙧𝙮𝙥𝙩𝙚𝙙.` 
                 }, { quoted: m });
             }
 
         } catch (err) {
             console.error('[VV ERROR]', err);
-            reply(`╔═══〔 ❍ *CODEX AI* ❍ 〕═══❒\n║╭───────────────◆\n║│ ✘ Error decrypting view-once.\n║╰───────────────◆\n╚══════════════════❒`);
+            reply(`✦ 𝘾𝞗𝘿𝞢𝙓 𝘼𝙄\n✘ 𝙀𝙧𝙧𝙤𝙧 𝙙𝙚𝙘𝙧𝙮𝙥𝙩𝙞𝙣𝙜 𝙫𝙞𝙚𝙬-𝙤𝙣𝙘𝙚.`);
         }
     }
 };
 
 
+                                       
