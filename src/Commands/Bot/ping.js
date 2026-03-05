@@ -21,7 +21,7 @@ module.exports = {
 
         await sock.sendPresenceUpdate('composing', m.key.remoteJid);
 
-        await sock.sendMessage(m.key.remoteJid, { text: '🚀 _Pinging..._' }, { quoted: m });
+        const initialMsg = await sock.sendMessage(m.key.remoteJid, { text: '🚀 _*PINGING...*_' }, { quoted: m });
 
         const latency = Date.now() - startTime;
         const now = new Date();
@@ -41,7 +41,10 @@ module.exports = {
         responseText += `╚══════════════════❒\n`;
         responseText += ` ╰─ 🥏 \`\`\`${time}\`\`\``;
 
-        await reply(responseText);
+        await sock.sendMessage(m.key.remoteJid, { 
+            text: responseText, 
+            edit: initialMsg.key 
+        });
 
         await sock.sendPresenceUpdate('available', m.key.remoteJid);
     }
