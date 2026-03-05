@@ -1,8 +1,8 @@
 const axios = require("axios");
 
 module.exports = {
-    name: "gpt",
-    alias: ["chatgpt", "chat", "gpt4"],
+    name: "codex",
+    alias: ["cdx", "cdxai", "codexai"],
     category: "ai",
     desc: "GPT AI Assistant",
 
@@ -13,7 +13,7 @@ module.exports = {
         const query = args.join(" ").trim();
 
         if (!query) {
-            return reply("⚉ _*Please ask something*_.");
+            return reply("🥏 _*Please ask something*_.");
         }
 
         try {
@@ -25,7 +25,7 @@ module.exports = {
             /* ⭐ TRAINING STYLE PROMPT SIMULATION */
 
             const TRAINING_PROMPT = `
-You are 𝗖𝗢𝗗𝗘𝗫 GPT Assistant.
+You are 𝗖𝗢𝗗𝗘𝗫  Assistant.
 
 Identity Rules:
 - Reply naturally and intelligently.
