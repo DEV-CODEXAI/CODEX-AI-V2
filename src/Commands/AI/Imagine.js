@@ -1,1 +1,78 @@
-function a0_0x5602(){const _0x4e4e64=['toBuffer','code','Edit\x20image\x20using\x20AI','getHeaders','𓉤\x20⚉\x20Processing\x20timeout','post','𓉤\x20⚉\x20AI\x20server\x20unavailable','param','sendPresenceUpdate','image','image.jpg','730155EFLqPc','✓\x20✪\x20`Image\x20edited\x20successfully`\x0a\x0a','[GPTIMAGE\x20ERROR]','log','data','𓉤\x20⚉\x20Rate\x20limit\x20exceeded','1710984AYsQiB','139578sNeYIV','from','𓄄\x20✪\x20`','5421LOPGOI','message','𓉤\x20⚉\x20Reply\x20to\x20an\x20image\x20or\x20sticker\x0a\x0a','7NvWVdf','composing','.gptimage\x20<prompt>\x20(reply\x20to\x20image/sticker)','4sfEABD','Compression\x20skipped:','sharp','status','✘\x20⚉\x20Failed\x20to\x20download\x20media','download','✘\x20⚉\x20Provide\x20a\x20prompt\x0a\x0a','✘\x20⚉\x20Reply\x20must\x20be\x20an\x20image\x20or\x20static\x20sticker','✘\x20⚉\x20<','error','form-data','length','arraybuffer','Unknown\x20error','𓄄\x20⚉\x20Prompt:\x0a<','𓉤\x20⚉\x20Result\x20exceeds\x20WhatsApp\x205MB\x20limit','isBuffer','join','3107704KqMwPp','594912wwUZHE','append','✘\x20⚉\x20No\x20image\x20returned\x20from\x20AI','5426208NmDEVO','mimetype','✘\x20⚉\x20Empty\x20image\x20received','test','inside','chat','response'];a0_0x5602=function(){return _0x4e4e64;};return a0_0x5602();}const a0_0x451111=a0_0x5cad;(function(_0x36a623,_0x36cc7d){const _0x3e812c=a0_0x5cad,_0x425bac=_0x36a623();while(!![]){try{const _0x4e8d07=-parseInt(_0x3e812c(0x1ec))/0x1+-parseInt(_0x3e812c(0x208))/0x2+-parseInt(_0x3e812c(0x1ef))/0x3+parseInt(_0x3e812c(0x1f5))/0x4*(parseInt(_0x3e812c(0x21d))/0x5)+parseInt(_0x3e812c(0x1eb))/0x6+parseInt(_0x3e812c(0x1f2))/0x7*(-parseInt(_0x3e812c(0x207))/0x8)+parseInt(_0x3e812c(0x20b))/0x9;if(_0x4e8d07===_0x36cc7d)break;else _0x425bac['push'](_0x425bac['shift']());}catch(_0x465509){_0x425bac['push'](_0x425bac['shift']());}}}(a0_0x5602,0x327d3));function a0_0x5cad(_0x337b1d,_0x1c6a8a){_0x337b1d=_0x337b1d-0x1e8;const _0x5602ac=a0_0x5602();let _0x5cad99=_0x5602ac[_0x337b1d];return _0x5cad99;}const axios=require('axios'),FormData=require(a0_0x451111(0x1ff)),{downloadMediaMessage}=require('@whiskeysockets/baileys'),sharp=require(a0_0x451111(0x1f7));module['exports']={'name':'imagine','alias':['gi','create'],'desc':a0_0x451111(0x214),'category':'ai','usage':a0_0x451111(0x1f4),'execute':async(_0x53cc12,_0x31b465,{args:_0x11fd96,reply:_0x23bf24,prefix:_0x98bd03})=>{const _0x1482e6=a0_0x451111;try{const _0x5142c4=_0x31b465['quoted'];if(!_0x5142c4)return _0x23bf24(_0x1482e6(0x1f1)+(_0x1482e6(0x1ee)+_0x98bd03+'gptimage\x20make\x20it\x20cinematic`'));if(!/image|webp/[_0x1482e6(0x20e)](_0x5142c4[_0x1482e6(0x20c)]||''))return _0x23bf24(_0x1482e6(0x1fc));const _0x164a22=_0x11fd96[_0x1482e6(0x206)]('\x20')['trim']();if(!_0x164a22)return _0x23bf24(_0x1482e6(0x1fb)+('𓄄\x20✪\x20`'+_0x98bd03+'gptimage\x20change\x20background\x20to\x20beach`'));await _0x53cc12[_0x1482e6(0x21a)](_0x1482e6(0x1f3),_0x31b465[_0x1482e6(0x210)]);let _0x348535=await _0x5142c4[_0x1482e6(0x1fa)]();if(!_0x348535)return _0x23bf24(_0x1482e6(0x1f9));if(Buffer[_0x1482e6(0x205)](_0x348535))try{_0x348535=await sharp(_0x348535)['resize']({'width':0x400,'height':0x400,'fit':_0x1482e6(0x20f)})['jpeg']({'quality':0x50})[_0x1482e6(0x212)]();}catch(_0x522b99){console[_0x1482e6(0x1e8)](_0x1482e6(0x1f6),_0x522b99[_0x1482e6(0x1f0)]);}const _0x442bd0=new FormData();_0x442bd0['append'](_0x1482e6(0x21b),_0x348535,{'filename':_0x1482e6(0x21c)}),_0x442bd0[_0x1482e6(0x209)](_0x1482e6(0x219),_0x164a22);const _0x244f16=await axios[_0x1482e6(0x217)]('https://api.nexray.web.id/ai/gptimage',_0x442bd0,{'headers':{..._0x442bd0[_0x1482e6(0x215)]()},'responseType':_0x1482e6(0x201),'timeout':0x2bf20});if(!_0x244f16?.[_0x1482e6(0x1e9)])return _0x23bf24(_0x1482e6(0x20a));const _0x597a1e=Buffer[_0x1482e6(0x1ed)](_0x244f16[_0x1482e6(0x1e9)]);if(!_0x597a1e[_0x1482e6(0x200)])return _0x23bf24(_0x1482e6(0x20d));const _0x58b450=0x5*0x400*0x400;if(_0x597a1e['length']>_0x58b450)return _0x23bf24(_0x1482e6(0x204));await _0x53cc12['sendMessage'](_0x31b465[_0x1482e6(0x210)],{'image':_0x597a1e,'caption':_0x1482e6(0x21e)+(_0x1482e6(0x203)+_0x164a22+'>')},{'quoted':_0x31b465});}catch(_0x4b3954){console[_0x1482e6(0x1fe)](_0x1482e6(0x21f),_0x4b3954);if(_0x4b3954[_0x1482e6(0x211)]?.[_0x1482e6(0x1f8)]===0x19d)return _0x23bf24('𓉤\x20⚉\x20Image\x20too\x20large\x20—\x20compression\x20failed');if(_0x4b3954['response']?.['status']===0x1ad)return _0x23bf24(_0x1482e6(0x1ea));if(_0x4b3954[_0x1482e6(0x211)]?.[_0x1482e6(0x1f8)]===0x1f4)return _0x23bf24(_0x1482e6(0x218));if(_0x4b3954[_0x1482e6(0x213)]==='ECONNABORTED')return _0x23bf24(_0x1482e6(0x216));_0x23bf24(_0x1482e6(0x1fd)+(_0x4b3954[_0x1482e6(0x1f0)]||_0x1482e6(0x202))+'>');}}};
+
+const axios = require('axios');
+const FormData = require('form-data');
+const sharp = require('sharp');
+
+module.exports = {
+    name: 'imagine',
+    alias: ['gi', 'create'],
+    desc: 'Edit image using AI',
+    category: 'ai',
+    usage: '.imagine <prompt> (reply to image/sticker)',
+
+    execute: async (sock, m, { args, reply, prefix }) => {
+        try {
+            const quoted = m.quoted;
+
+            if (!quoted) return reply(`🥏 𝙍𝞢𝙋𝙇𝙔 𝙏𝞗 𝘼𝙉 𝙄𝙈𝘼𝙂𝞢 𝞗𝙍 𝙎𝙏𝙄𝘾𝙆𝞢𝙍\n\n🪄🥏 \`${prefix}gptimage make it cinematic\``);
+
+            if (!/image|webp/.test(quoted.mimetype || '')) return reply('✘ 🥏 𝙍𝞢𝙋𝙇𝙔 𝙈𝞐𝙎𝙏 𝘽𝞢 𝘼𝙉 𝙄𝙈𝘼𝙂𝞢 𝞗𝙍 𝙎𝙏𝘼𝙏𝙄𝘾 𝙎𝙏𝙄𝘾𝙆𝞢𝙍');
+
+            const prompt = args.join(' ').trim();
+            if (!prompt) return reply(`✘ 𝙋𝙍𝞗𝙑𝙄𝘿𝞢 𝘼 𝙋𝙍𝞗𝙈𝙋𝙏\n\n🪄🥏 \`${prefix}gptimage change background to beach\``);
+
+            await sock.sendPresenceUpdate('composing', m.chat);
+
+            let media = await quoted.download();
+            if (!media) return reply('✘ 𝙁𝘼𝙄𝙇𝞢𝘿 𝙏𝞗 𝘿𝞗𝙒𝙉𝙇𝞗𝘼𝘿 𝙈𝞢𝘿𝙄𝘼');
+
+            if (Buffer.isBuffer(media)) {
+                try {
+                    media = await sharp(media)
+                        .resize({ width: 1024, height: 1024, fit: 'inside' })
+                        .jpeg({ quality: 80 })
+                        .toBuffer();
+                } catch (err) {
+                    console.log('Compression skipped:', err.message);
+                }
+            }
+
+            const form = new FormData();
+            form.append('image', media, { filename: 'image.jpg' });
+            form.append('param', prompt);
+
+            const response = await axios.post('https://api.nexray.web.id/ai/gptimage', form, {
+                headers: { ...form.getHeaders() },
+                responseType: 'arraybuffer',
+                timeout: 180000
+            });
+
+            if (!response?.data) return reply('✘ 🥏 𝙉𝞗 𝙄𝙈𝘼𝙂𝞢 𝙍𝞢𝙏𝞐𝙍𝙉𝞢𝘿 𝙁𝙍𝞗𝙈 𝘼𝙄');
+
+            const result = Buffer.from(response.data);
+            if (!result.length) return reply('✘ 🥏 𝞢𝙈𝙋𝙏𝙔 𝙄𝙈𝘼𝙂𝞢 𝙍𝞢𝘾𝞢𝙄𝙑𝞢𝘿');
+
+            if (result.length > 5 * 1024 * 1024) return reply('🥏 ⚉ 𝙍𝞢𝙎𝞐𝙇𝙏 𝞢𝙓𝘾𝞢𝞢𝘿𝙎 𝙒𝙃𝘼𝙏𝙎𝘼𝙋𝙋 𝟱𝙈𝘽 𝙇𝙄𝙈𝙄𝙏');
+
+            let caption = `✦ 𝘾𝞗𝘿𝞢𝙓 𝘼𝙄 - 𝙄𝙈𝘼𝙂𝞢 𝞢𝘿𝙄𝙏\n\n`;
+            caption += `✓ 𝙄𝙈𝘼𝙂𝞢 𝞢𝘿𝙄𝙏𝞢𝘿 𝙎𝙐𝘾𝘾𝞢𝙎𝙎𝙁𝞐𝙇𝙇𝙔\n\n`;
+            caption += `🪄🥏 𝙋𝙍𝞗𝙈𝙋𝙏: < ${prompt.toUpperCase()} >\n\n`;
+            caption += `✨ _𝙂𝞢𝙉𝞢𝙍𝘼𝙏𝞢𝘿 𝘽𝙔 𝘾𝞗𝘿𝞢𝙓 𝘼𝙄_`;
+
+            await sock.sendMessage(m.chat, { image: result, caption: caption }, { quoted: m });
+
+        } catch (err) {
+            console.error('[GPTIMAGE ERROR]', err);
+
+            if (err.response?.status === 413) return reply('🥏  𝙄𝙈𝘼𝙂𝞢 𝙏𝞗𝞗 𝙇𝘼𝙍𝙂𝞢 — 𝘾𝞗𝙈𝙋𝙍𝞢𝙎𝙎𝙄𝞗𝙉 𝙁𝘼𝙄𝙇𝞢𝘿');
+            if (err.response?.status === 429) return reply('🥏  𝙍𝘼𝙏𝞢 𝙇𝙄𝙈𝙄𝙏 𝞢𝙓𝘾𝞢𝞢𝘿𝞢𝘿');
+            if (err.response?.status === 500) return reply('🥏  𝘼𝙄 𝙎𝞢𝙍𝙑𝞢𝙍 𝙐𝙉𝘼𝙑𝘼𝙄𝙇𝘼𝘽𝙇𝞢');
+            if (err.code === 'ECONNABORTED') return reply('🥏  𝙋𝙍𝞗𝘾𝞢𝙎𝙎𝙄𝙉𝙂 𝙏𝙄𝙈𝞢𝞗𝙐𝙏');
+
+            reply(`✘ 🥏 < ${err.message?.toUpperCase() || '𝞐𝙉𝙆𝙉𝞗𝙒𝙉 𝞢𝙍𝙍𝞗𝙍'} >`);
+        }
+    }
+};
+
+
+              
