@@ -1,16 +1,25 @@
+
 const jokes = [
-    "Why don't scientists trust atoms? Because they make up everything! 😂",
-    "Why did the scarecrow win an award? He was outstanding in his field! 🌾",
-    "I told my wife she was drawing her eyebrows too high. She looked surprised! 😮",
-    "Why can't you give Elsa a balloon? Because she'll let it go! 🎈",
-    "What do you call cheese that isn't yours? Nacho cheese! 🧀"
+    "✦ **THE QUANTUM TRUST CRISIS**\n\n\n.\n\n.\n\n.\n\nThere was once a scientist named Dr. Aris Thorne...\n\nHe dedicated sixty-five years of his life to the study of subatomic physics.\n\nHe lived in a bunker deep beneath the Swiss Alps.\n\nHe was surrounded by particle accelerators and massive chalkboards.\n\nHe never married.\n\nHe never saw the sun.\n\nHe ate nothing but canned tuna for decades.\n\nOn his 90th birthday, the world's leading journalists gathered...\n\nThey asked: 'Doctor, what is the greatest wisdom you can impart?'\n\nThe old man trembled and leaned into the microphone.\n\nHe whispered: 'Do not trust them. Do not trust a single one of them.'\n\nThe journalists gasped. 'Trust who, Doctor? The government? The machines?'\n\nThe doctor shook his head slowly and looked into the distance.\n\n'No,' he croaked. 'The atoms. Never trust the atoms.'\n\nWhen asked why, he sighed and said:\n\n'Because I have spent a lifetime looking at them...'\n\n.\n\n.\n\n.\n\n'And I've realized... they literally make up everything!' 😂",
+
+    "✦ **THE LEGEND OF THE SILENT SENTINEL**\n\n\n.\n\n.\n\n.\n\nDeep in the heart of the Great Plains, there was a cornfield.\n\nIt was so legendary that it was whispered about by crows across three continents.\n\nThis field belonged to a man named Silas.\n\nSilas hadn't lost a single kernel of corn to a bird in over forty years.\n\nOther farmers spent millions on high-frequency sonic emitters.\n\nThey bought laser defense systems and trained falcons.\n\nBut Silas had nothing but a figure made of old denim and rotted straw.\n\nEventually, the International Board of Agricultural Excellence investigated.\n\nThey checked for hidden chemicals, motion sensors, and ancient curses.\n\nAt the grand ceremony, the Chairman handed Silas a gold trophy.\n\n'Silas,' the Chairman said, 'how did your scarecrow do it?'\n\nSilas took a sip of water, adjusted his cap, and looked at the crowd.\n\n'Well, sir,' Silas drawled, 'most folks just build a dummy.'\n\n'But I built a professional.'\n\n.\n\n.\n\n.\n\n'And in history, no one has ever been more outstanding in his field!' 🌾",
+
+    "✦ **THE GREAT EYEBROW MYSTERY**\n\n\n.\n\n.\n\n.\n\nMy wife and I have a very honest relationship.\n\nOr at least we did until the 'Great Eyebrow Incident.'\n\nIt started when she discovered a 'revolutionary' beauty vlog.\n\nShe locked herself in the bathroom for four and a half hours.\n\nI could hear pencils sharpening and heavy sighs.\n\nWhen she finally emerged, she looked like a cartoon character.\n\nHer eyebrows weren't just on her forehead...\n\nThey were practically migrating toward her hairline.\n\nThey hovered like two black boomerangs ready to strike.\n\nI sat on the sofa, clutching my coffee mug, trying to stay neutral.\n\nFinally, I cleared my throat and said:\n\n'Sweetheart, I think you might have drawn your eyebrows too high today.'\n\nI waited for a scream, a lecture, or a flying shoe.\n\nInstead, she just stared at me in silence.\n\n.\n\n.\n\n.\n\nTo be honest, I think she wanted to argue, but she just looked really surprised! 😮",
+
+    "✦ **THE ARENDELLE PROTOCOL**\n\n\n.\n\n.\n\n.\n\nIn the kingdom of Arendelle, the feast of chocolate was massive.\n\nQueen Elsa stood on the balcony, greeting thousands of subjects.\n\nA small orphan boy managed to push through the crowd.\n\nHe wanted to give the Queen a single, bright red helium balloon.\n\nAs he reached out, the Captain of the Guard tackled the boy!\n\nKristoff dove over the banquet table to shield the cake!\n\nThe crowd fell into a terrified silence.\n\nThe boy started to cry, asking what he had done wrong.\n\nThe Captain looked at the boy with eyes full of pity.\n\n'Listen, kid, you're new here, so I'll give you a pass.'\n\n'But you can never give Queen Elsa a balloon.'\n\n'Don't you know her history? The second she gets her hands on it...'\n\n.\n\n.\n\n.\n\n'Her only instinct is to let it go! Let it go! She can't hold it back anymore!' 🎈",
+
+    "✦ **THE WISCONSIN CHEESE CONSPIRACY**\n\n\n.\n\n.\n\n.\n\nA traveler was driving through Wisconsin at midnight.\n\nHe saw a briefcase glowing with an ethereal light near a barn.\n\nInside were layers of the most perfect, gold-leaf-wrapped cheese wheels.\n\nHe reached in, his mouth watering, ready for a culinary miracle.\n\nSuddenly, sirens wailed and spotlights blinded him!\n\nA SWAT team jumped out, yelling for him to 'step away from the dairy!'\n\nA high-ranking officer walked up, looking at the man with disappointment.\n\n'Do you have any idea what you've stumbled upon?' the officer asked.\n\nThe man stammered, 'It’s... it's just some snack food, officer!'\n\nThe officer pulled out handcuffs and shook his head.\n\n'This is a top-secret shipment for the Governor.'\n\n'And I'm afraid I have to arrest you...'\n\n.\n\n.\n\n.\n\n'Because that isn't your cheese... it's Nacho Cheese!' 🧀"
 ];
+
 module.exports = {
     name: 'joke',
     alias: ['jokes'],
-    desc: 'Get a random joke',
+    desc: 'Get a vertically massive random joke',
     category: 'Fun',
     execute: async (sock, m, { reply }) => {
-        await reply(jokes[Math.floor(Math.random() * jokes.length)]);
+        const randomJoke = jokes[Math.floor(Math.random() * jokes.length)];
+        await reply(randomJoke);
     }
 };
+
+
