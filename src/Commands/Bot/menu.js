@@ -17,7 +17,6 @@ module.exports = {
     },
 
     execute: async (sock, m, { prefix, config, reply }) => {
-
         const sender = m.sender || m.key?.participant || m.key?.remoteJid || '';
         const senderNumber = sender.split('@')[0] || 'Unknown';
         const cats = getByCategory();
@@ -40,23 +39,14 @@ module.exports = {
 
         const readMore = String.fromCharCode(8206).repeat(4001);
 
-        const getHost = () => {
-            const platform = os.platform();
-            if (process.env.P_SERVER_UUID || process.env.P_SERVER_LOCATION) return 'Pterodactyl Panel';
-            if (process.env.HEROKU_APP_ID) return 'Heroku Cloud';
-            if (process.env.REPLIT_SLUG) return 'Replit VM';
-            if (platform === 'win32') return 'Windows Server';
-            if (platform === 'linux') return 'Linux VPS';
-            return platform;
-        };
-
         const getStorage = () => {
             try {
                 const totalMem = os.totalmem();
                 const usedMem = totalMem - os.freemem();
                 const usedGB = (usedMem / 1024 / 1024 / 1024).toFixed(1);
                 const totalGB = (totalMem / 1024 / 1024 / 1024).toFixed(1);
-                return `${usedGB}/${totalGB}GB`;
+                const percent = Math.round((usedMem / totalMem) * 100);
+                return `${usedGB}/${totalGB}GB (${percent}%)`;
             } catch { return 'N/A'; }
         };
 
@@ -77,11 +67,10 @@ module.exports = {
         let text = `╔═══〔 ❍ *${botName.toUpperCase()}* ❍ 〕═══❒\n`;
         text += `║╭───────────────◆\n`;
         text += `║│ ❍ *USER:* ${userName}\n`;
+        text += `║│ ❍ *HOST:* Pterodactyl (panel)\n`;
         text += `║│ ❍ *PREFIX:* ${prefix}\n`;
         text += `║│ ❍ *CMDS:* ${total}\n`;
-        text += `║│ ❍ *VERSION:* 2.0.0\n`;
         text += `║│ ❍ *UPTIME:* ${uptime} MIN\n`;
-        text += `║│ ❍ *HOST:* ${getHost()}\n`;
         text += `║│ ❍ *MODE:* ${config.status?.public ? 'PUBLIC' : 'PRIVATE'}\n`;
         text += `║│ ❍ *STORAGE:* ${getStorage()}\n`;
         text += `║╰───────────────◆\n`;
@@ -101,21 +90,23 @@ module.exports = {
             text += `║╰───────────────◆\n`;
             text += `╚══════════════════❒\n\n`;
         }
-
         text += `╔═══〔 ❍ *DEVELOPER* ❍ 〕═══❒\n`;
         text += `║╭───────────────◆\n`;
-        text += `║│ ✰ 𝗖𝗢𝗗𝗘𝗫\n`;
+        text += `║│ ✰ 𝗖𝗢𝗗𝗘𝗫 𝐀𝐈\n`;
         text += `║│ ➤ VERSION : 2.0.0\n`;
         text += `║╰───────────────◆\n`;
         text += `╚══════════════════❒\n`;
-        text += ` ╰─ 🥏 \`\`\`${time}\`\`\``;
+        text += ` ╰─ 𓄄 \`\`\`${time}\`\`\``;
 
         const imagePath = path.join(__dirname, "../../assets/menu.png");
         async function getMenuImage() {
             if (fs.existsSync(imagePath)) return fs.readFileSync(imagePath);
             try {
-                const res = await axios.get(config.thumbnail || "https://i.imgur.com/BoN9kdC.png", { responseType: "arraybuffer" });
-                fs.mkdirSync(path.dirname(imagePath), { recursive: true });
+                const res = await axios.get(
+                    config.thumbnail || config.thumbUrl || "https://i.imgur.com/BoN9kdC.png",
+                    { responseType: "arraybuffer" }
+                );
+                if (!fs.existsSync(path.dirname(imagePath))) fs.mkdirSync(path.dirname(imagePath), { recursive: true });
                 fs.writeFileSync(imagePath, res.data);
                 return res.data;
             } catch { return null; }
@@ -123,7 +114,10 @@ module.exports = {
 
         const imageBuffer = await getMenuImage();
 
-        await sock.sendMessage(m.chat, imageBuffer ? { image: imageBuffer, caption: text } : { text: text }, { quoted: m });
+        await sock.sendMessage(m.chat, 
+            imageBuffer ? { image: imageBuffer, caption: text } : { text: text }, 
+            { quoted: m }
+        );
     }
 };
 
