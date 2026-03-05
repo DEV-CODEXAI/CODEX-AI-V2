@@ -32,7 +32,7 @@ module.exports = {
 
     execute: async (sock, m, { args, reply }) => {
 
-        if (!m.isGroup) return reply('⚉ Group only');
+        if (!m.isGroup) return reply('🥏 Group only');
 
         const db = loadDB();
         const group = m.chat;
@@ -43,7 +43,7 @@ module.exports = {
 
         if (!cmd) {
             const status = db[group].enabled ? "ON" : "OFF";
-            return reply(`✪ AntiLink Status: ${status}\n\nUse .antilink on/off`);
+            return reply(`🥏 AntiLink Status: ${status}\n\nUse .antilink on/off`);
         }
 
         if (cmd === 'on') {
@@ -58,7 +58,7 @@ module.exports = {
             return reply('✘ _*AntiLink Disabled*_');
         }
 
-        reply('⚉ Usage: .antilink on/off');
+        reply('🥏 Usage: .antilink on/off');
     }
 };
 
@@ -93,7 +93,7 @@ module.exports.handleAntiLink = async function(sock, m) {
         await sock.sendMessage(group, { delete: m.key });
 
         await sock.sendMessage(group, {
-            text: `⚉ *Link detected*!\n@${sender.split('@')[0]}_*Links are strictly not allowed here*_`,
+            text: `🥏 *Link detected*!\n@${sender.split('@')[0]}_*Links are highly prohibited here*_`,
             mentions: [sender]
         });
 
