@@ -12,14 +12,14 @@ module.exports = {
  execute: async (sock, m, { args, reply }) => {
  try {
  const url = args[0];
- if (!url) return reply('⚉ Please provide a URL to shorten\nExample: .short https://example.com');
+ if (!url) return reply('🥏 Please provide a URL to shorten\nExample: .short https://example.com');
 
  const res = await axios.get('https://is.gd/create.php', {
  params: { format: 'json', url }
  });
 
  if (res.data && res.data.shorturl) {
- return reply(`⚉ Shortened URL:\n\n${res.data.shorturl}`);
+ return reply(`🥏 Shortened URL:\n\n${res.data.shorturl}`);
  } else {
  return reply('✘ Failed to shorten the URL.');
  }
