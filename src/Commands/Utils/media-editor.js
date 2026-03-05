@@ -18,11 +18,11 @@ module.exports = {
         const mtype = quoted.mtype || quoted.type || '';
 
         if (!mtype.includes('image')) {
-            return reply('⚉ Reply to an *image* (not video/sticker/doc)');
+            return reply(' Reply to an *image* (not video/sticker/doc)');
         }
 
         try {
-            await reply('_*✪ Editing image...*_');
+            await reply('_🪄*Editing image...*_');
 
             // Download image
             const buffer = await m.quoted.download();
@@ -94,7 +94,7 @@ module.exports = {
             await sock.sendMessage(m.key.remoteJid, {
                 image: outputBuffer,
                 mimetype: 'image/png',
-                caption: `✨ Edited with .${cmd}`
+                caption: `🪄 Edited with .${cmd}`
             }, { quoted: m });
 
         } catch (err) {
