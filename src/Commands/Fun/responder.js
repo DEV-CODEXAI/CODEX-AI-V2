@@ -1,7 +1,7 @@
 
 module.exports = {
-    name: 'codex',
-    alias: ['cdx', 'codex!', 'codexai'],
+    name: 'cdx',
+    alias: ['cdx!', 'codexai!', 'cdxai'],
     desc: 'Official CODEX AI signature reaction + message',
     category: 'fun',
 
