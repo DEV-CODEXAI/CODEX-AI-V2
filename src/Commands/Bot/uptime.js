@@ -38,8 +38,8 @@ module.exports = {
 
         let responseText = `╔═══〔 ❍ *${botName.toUpperCase()}* ❍ 〕══❒\n`;
         responseText += `║╭───────────────◆\n`;
-        responseText += `║│ ❍ *UPTIME:* ${uptimeString}\n`;
-        responseText += `║│ ❍ *STATUS:* Online\n`;
+        responseText += `║│ ❍ *UPTIME:* `${uptimeString}`\n`;
+        responseText += `║│ ❍ *STATUS:* 🚀Online\n`;
         responseText += `║╰───────────────◆\n`;
         responseText += `╚══════════════════❒\n`;
         responseText += ` ╰─ 🥏 \`\`\`${time}\`\`\``;
