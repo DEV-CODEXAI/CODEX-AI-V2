@@ -1,1 +1,70 @@
-const a0_0x2473fd=a0_0xb329;(function(_0x5b902f,_0x1c0c61){const _0x4e6fdc=a0_0xb329,_0x3e1ecb=_0x5b902f();while(!![]){try{const _0x1e61d0=-parseInt(_0x4e6fdc(0xa8))/0x1+parseInt(_0x4e6fdc(0x9a))/0x2+-parseInt(_0x4e6fdc(0x88))/0x3*(-parseInt(_0x4e6fdc(0xb1))/0x4)+-parseInt(_0x4e6fdc(0xa9))/0x5*(parseInt(_0x4e6fdc(0xa2))/0x6)+parseInt(_0x4e6fdc(0xa0))/0x7+parseInt(_0x4e6fdc(0x94))/0x8*(-parseInt(_0x4e6fdc(0x9b))/0x9)+parseInt(_0x4e6fdc(0x9c))/0xa;if(_0x1e61d0===_0x1c0c61)break;else _0x3e1ecb['push'](_0x3e1ecb['shift']());}catch(_0x5cb3c4){_0x3e1ecb['push'](_0x3e1ecb['shift']());}}}(a0_0x279a,0x78928));const axios=require(a0_0x2473fd(0x98)),FormData=require(a0_0x2473fd(0x97));module['exports']={'name':a0_0x2473fd(0x91),'alias':[a0_0x2473fd(0xa6),'nobg',a0_0x2473fd(0x95)],'desc':'Remove\x20background\x20from\x20replied\x20image','category':a0_0x2473fd(0x89),'usage':a0_0x2473fd(0xaf),'owner':![],'execute':async(_0xe9f2be,_0x4965ec,{reply:_0x2ce042})=>{const _0x5195e8=a0_0x2473fd;if(!_0x4965ec[_0x5195e8(0x8b)])return _0x2ce042(_0x5195e8(0x8f));const _0x99be59=_0x4965ec['quoted'],_0x4d42f5=_0x99be59[_0x5195e8(0x9f)]||_0x99be59[_0x5195e8(0xa3)]||'';if(![_0x5195e8(0xa5),'image'][_0x5195e8(0xb2)](_0x4d42f5))return _0x2ce042(_0x5195e8(0x87));try{await _0x2ce042(_0x5195e8(0x96));const _0xe572dc=await _0x4965ec[_0x5195e8(0x8b)][_0x5195e8(0xa1)]();if(!_0xe572dc||_0xe572dc[_0x5195e8(0x93)]<0x64)return _0x2ce042(_0x5195e8(0xa7));const _0x3d615d=new FormData();_0x3d615d[_0x5195e8(0xae)]('image_file',_0xe572dc,{'filename':'image.jpg','contentType':_0x5195e8(0x84)}),_0x3d615d[_0x5195e8(0xae)]('size',_0x5195e8(0x86));const _0x5cce9f=await axios[_0x5195e8(0xad)](_0x5195e8(0x85),_0x3d615d,{'headers':{..._0x3d615d[_0x5195e8(0x92)](),'X-Api-Key':'wPFjD5dk6JXo6P5UoxtH6dJW'},'responseType':_0x5195e8(0xac),'timeout':0x7530});await _0xe9f2be[_0x5195e8(0x8c)](_0x4965ec[_0x5195e8(0x9e)][_0x5195e8(0xaa)],{'image':Buffer[_0x5195e8(0xb0)](_0x5cce9f[_0x5195e8(0x90)]),'mimetype':'image/png','caption':_0x5195e8(0xa4)},{'quoted':_0x4965ec});}catch(_0x24b654){let _0x2c7171='╭─❍\x20*𝗖𝗢𝗗𝗘𝗫\x20AI\x20V2.0*\x0a│\x20✘\x20Failed\x20to\x20remove\x20background.';if(_0x24b654[_0x5195e8(0xb3)]?.[_0x5195e8(0xab)]===0x192)_0x2c7171+=_0x5195e8(0x8a);else{if(_0x24b654['response']?.['status']===0x191)_0x2c7171+=_0x5195e8(0x9d);else _0x24b654['code']===_0x5195e8(0x8e)&&(_0x2c7171+=_0x5195e8(0x8d));}_0x2c7171+=_0x5195e8(0x99),await _0x2ce042(_0x2c7171);}}};function a0_0xb329(_0x19fe59,_0x52afb1){_0x19fe59=_0x19fe59-0x84;const _0x279a61=a0_0x279a();let _0xb329ce=_0x279a61[_0x19fe59];return _0xb329ce;}function a0_0x279a(){const _0x61793f=['156dThSdj','includes','response','image/jpeg','https://api.remove.bg/v1.0/removebg','auto','╭─❍\x20*𝗖𝗢𝗗𝗘𝗫\x20AI\x20V2.0*\x0a│\x20✘\x20Please\x20reply\x20to\x20an\x20image\x20only.\x0a╰──────────────────','61302zePPcF','Tools','\x0a│\x20✦\x20API\x20credits\x20exhausted.','quoted','sendMessage','\x0a│\x20✦\x20Request\x20timed\x20out.','ECONNABORTED','╭─❍\x20*𝗖𝗢𝗗𝗘𝗫\x20AI\x20V2.0*\x0a│\x20✘\x20Reply\x20to\x20an\x20image.\x0a╰──────────────────','data','rembg','getHeaders','length','40WofqdG','bgremove','╭─❍\x20*𝗖𝗢𝗗𝗘𝗫\x20AI\x20V2.0*\x0a│\x20✪\x20Removing\x20background...\x0a╰──────────────────','form-data','axios','\x0a╰──────────────────','162810FigXhR','1599201vbmLjS','19405190UDlEKv','\x0a│\x20✦\x20Invalid\x20API\x20key.','key','type','577493LzncQn','download','4783686Spluuy','mtype','╭─❍\x20*𝗖𝗢𝗗𝗘𝗫\x20AI\x20V2.0*\x0a│\x20✦\x20Background\x20removed\x20successfully.\x0a╰──────────────────','imageMessage','removebg','╭─❍\x20*𝗖𝗢𝗗𝗘𝗫\x20AI\x20V2.0*\x0a│\x20✘\x20Failed\x20to\x20download\x20image.\x0a╰──────────────────','721759lRLDrs','5FhqbnO','remoteJid','status','arraybuffer','post','append','.rembg\x20(reply\x20to\x20an\x20image)','from'];a0_0x279a=function(){return _0x61793f;};return a0_0x279a();}
+
+const axios = require('axios');
+const FormData = require('form-data');
+
+module.exports = {
+    name: 'rembg',
+    alias: ['removebg', 'nobg', 'bgremove'],
+    desc: 'Remove background from replied image',
+    category: 'Tools',
+    usage: '.rembg (reply to an image)',
+    owner: false,
+
+    execute: async (sock, m, { reply }) => {
+        if (!m.quoted) {
+            return reply('✦ 𝘾𝞗𝘿𝞢𝙓 𝘼𝙄\n✘ 𝙋𝙡𝙚𝙖𝙨𝙚 𝙧𝙚𝙥𝙡𝙮 𝙩𝙤 𝙖𝙣 𝙞𝙢𝙖𝙜𝙚.');
+        }
+
+        const quoted = m.quoted;
+        const mimeType = quoted.mtype || quoted.type || '';
+
+        if (!['imageMessage', 'image'].includes(mimeType)) {
+            return reply('✦ 𝘾𝞗𝘿𝞢𝙓 𝘼𝙄\n✘ 𝙋𝙡𝙚𝙖𝙨𝙚 𝙧𝙚𝙥𝙡𝙮 𝙩𝙤 𝙖𝙣 𝙞𝙢𝙖𝙜𝙚 𝙤𝙣𝙡𝙮.');
+        }
+
+        try {
+            await reply('✦ 𝘾𝞗𝘿𝞢𝙓 𝘼𝙄\n✪ 𝙍𝙚𝙢𝙤𝙫𝙞𝙣𝙜 𝙗𝙖𝙘𝙠𝙜𝙧𝙤𝙪𝙣𝙙...');
+
+            const imageBuffer = await m.quoted.download();
+            if (!imageBuffer || imageBuffer.length < 100) {
+                return reply('✦ 𝘾𝞗𝘿𝞢𝙓 𝘼𝙄\n✘ 𝙁𝙖𝙞𝙡𝙚𝙙 𝙩𝙤 𝙙𝙤𝙬𝙣𝙡𝙤𝙖𝙙 𝙞𝙢𝙖𝙜𝙚.');
+            }
+
+            const form = new FormData();
+            form.append('image_file', imageBuffer, { filename: 'image.jpg', contentType: 'image/jpeg' });
+            form.append('size', 'auto');
+
+            const response = await axios.post('https://api.remove.bg/v1.0/removebg', form, {
+                headers: {
+                    ...form.getHeaders(),
+                    'X-Api-Key': 'wPFjD5dk6JXo6P5UoxtH6dJW' 
+                },
+                responseType: 'arraybuffer',
+                timeout: 30000
+            });
+
+            const caption = '\n✦ 𝘽𝙖𝙘𝙠𝙜𝙧𝙤𝙪𝙣𝙙 𝙧𝙚𝙢𝙤𝙫𝙚𝙙 𝙨𝙪𝙘𝙘𝙚𝙨𝙨𝙛𝙪𝙡𝙡𝙮 𝙗𝙮 𝘾𝞗𝘿𝞢𝙓 𝘼𝙄';
+
+            await sock.sendMessage(m.key.remoteJid, {
+                image: Buffer.from(response.data),
+                mimetype: 'image/png',
+                caption: caption
+            }, { quoted: m });
+
+        } catch (error) {
+            let errorMsg = '✘ 𝙁𝙖𝙞𝙡𝙚𝙙 𝙩𝙤 𝙧𝙚𝙢𝙤𝙫𝙚 𝙗𝙖𝙘𝙠𝙜𝙧𝙤𝙪𝙣𝙙.';
+            
+            if (error.response?.status === 402) {
+                errorMsg = '✦ 𝘼𝙋𝙄 𝙘𝙧𝙚𝙙𝙞𝙩𝙨 𝙚𝙭𝙝𝙖𝙪𝙨𝙩𝙚升级.';
+            } else if (error.response?.status === 401) {
+                errorMsg = '✦ 𝙄𝙣𝙫𝙖𝙡𝙞𝙙 𝘼𝙋𝙄 𝙠𝙚𝙮.';
+            } else if (error.code === 'ECONNABORTED') {
+                errorMsg = '✦ 𝙍𝙚𝙦𝙪𝙚𝙨𝙩 𝙩𝙞𝙢𝙚𝙙 𝙤𝙪𝙩.';
+            }
+
+            await reply(`✦ 𝘾𝞗𝘿𝞢𝙓 𝘼𝙄\n${errorMsg}`);
+        }
+    }
+};
+
+
