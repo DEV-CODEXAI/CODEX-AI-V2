@@ -44,7 +44,7 @@ module.exports = {
             if (!m.quoted) {
                 return reply(
                     '✘ Reply to a QR code image!\n\n' +
-                    'How: Send a QR image → reply to it → type .qrread.  ⚉'
+                    'How: Send a QR image → reply to it → type .qrread.  '
                 );
             }
 
@@ -82,7 +82,7 @@ module.exports = {
                 }
 
                 return reply(
-                    '_⚉ No QR code detected_.\n\n' +
+                    '_ No QR code detected_.\n\n' +
                     '• Try a clearer / higher-quality image\n' +
                     '• Make sure the QR fills most of the frame\n' +
                     '• Avoid heavy compression or blur'
