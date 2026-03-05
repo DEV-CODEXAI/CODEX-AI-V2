@@ -19,18 +19,18 @@ module.exports = {
     execute: async (sock, m, { args, reply }) => {
         // Must reply to audio
         if (!m.quoted) {
-            return reply('_*𓄄 Reply to an audio/voice note to edit it!*_');
+            return reply('_* Reply to an audio/voice note to edit it!*_');
         }
 
         const quoted = m.quoted;
         const mtype = quoted.mtype || quoted.type || '';
 
         if (!['audioMessage', 'audio'].includes(mtype)) {
-            return reply('_𓉤 Reply to an *audio* or *voice note*_');
+            return reply('_ Reply to an *audio* or *voice note*_');
         }
 
         try {
-            await reply('_*✪ Processing audio...*_');
+            await reply('_*🚀 Processing audio...*_');
 
             // Download audio
             const buffer = await m.quoted.download();
@@ -114,11 +114,11 @@ module.exports = {
             fs.unlinkSync(tempInput);
             fs.unlinkSync(tempOutput);
 
-            await reply(`✨ Audio edited with .${command}`);
+            await reply(`🪄 Audio edited with .${command}`);
 
         } catch (err) {
             console.error('[AUDIO-EDITOR ERROR]', err.message || err);
-            await reply('_*⚉ Failed to process audio*_\n' + (err.message || 'Unknown error'));
+            await reply('_* Failed to process audio*_\n' + (err.message || 'Unknown error'));
         }
     }
 };
