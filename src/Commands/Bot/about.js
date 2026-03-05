@@ -1,1 +1,29 @@
-var a0_0x4916ae=a0_0x556e;function a0_0x556e(_0x5f4586,_0x1fc6b2){_0x5f4586=_0x5f4586-0x127;var _0x4b2c94=a0_0x4b2c();var _0x556e81=_0x4b2c94[_0x5f4586];return _0x556e81;}(function(_0x2707a0,_0x4e0226){var _0x161535=a0_0x556e,_0x1519fd=_0x2707a0();while(!![]){try{var _0x2ffcf6=-parseInt(_0x161535(0x133))/0x1+-parseInt(_0x161535(0x139))/0x2*(parseInt(_0x161535(0x12a))/0x3)+parseInt(_0x161535(0x134))/0x4*(-parseInt(_0x161535(0x127))/0x5)+-parseInt(_0x161535(0x136))/0x6+parseInt(_0x161535(0x131))/0x7*(-parseInt(_0x161535(0x12f))/0x8)+parseInt(_0x161535(0x138))/0x9*(parseInt(_0x161535(0x129))/0xa)+parseInt(_0x161535(0x130))/0xb;if(_0x2ffcf6===_0x4e0226)break;else _0x1519fd['push'](_0x1519fd['shift']());}catch(_0xa4a0e0){_0x1519fd['push'](_0x1519fd['shift']());}}}(a0_0x4b2c,0xc75f5),module['exports']={'name':a0_0x4916ae(0x12c),'alias':['info',a0_0x4916ae(0x135)],'desc':a0_0x4916ae(0x12e),'category':a0_0x4916ae(0x12d),'reactions':{'start':'💬','success':'✨'},'execute':async(_0x446779,_0x3b71ff,{reply:_0x1a1469,config:_0x5e7828})=>{var _0x109a24=a0_0x4916ae;await _0x1a1469(_0x109a24(0x132)+_0x5e7828['settings'][_0x109a24(0x128)]+'\x0a👑\x20*Owner:*\x20✦\x20𝗖𝗢𝗗𝗘𝗫\x0a⚡\x20*Version:*\x202.0.0\x0a🌐\x20*Library:*\x20Baileys\x0a📦\x20*Commands:*\x20crysnova\x20ai-Style\x0a🔗\x20*Connection:*𝗖𝗢𝗗𝗘𝗫\x20𝐨𝐟𝐟𝐢𝐜𝐢𝐚𝐥\x20V1.0\x0a\x0a📢\x20Channel:\x20https://whatsapp.com/channel/0029Vb6sMEy96H4VI2w3I50F\x0a🐙\x20GitHub:\x20'+_0x5e7828[_0x109a24(0x137)][_0x109a24(0x12b)]);}});function a0_0x4b2c(){var _0x518707=['settings','597573KcSZsh','10beAnBb','1166705Caxccj','title','240ukPTsK','114657snutXC','author','about','Bot','About\x20this\x20bot','8Zvirvf','35469962jEUvXp','8866165ulfcAM','╔═══════════════════════╗\x0a║\x20✦\x20𝗖𝗢𝗗𝗘𝗫\x20V2.0\x20\x20\x20\x20║\x0a╚═══════════════════════╝\x0a\x0a🤖\x20*Bot:*\x20','694331oyFVIz','8OpHxNv','repo','8296428FyojJR'];a0_0x4b2c=function(){return _0x518707;};return a0_0x4b2c();}
+
+module.exports = {
+    name: 'about',
+    alias: ['info', 'Bot'],
+    desc: 'About this bot',
+    category: 'about',
+    reactions: {
+        start: '💬',
+        success: '✨'
+    },
+    execute: async (sock, m, { reply, config }) => {
+        const infoMessage = `╔═══〔 ❍ *CODEX V2.0* ❍ 〕═══❒\n` +
+            `║╭───────────────◆\n` +
+            `║│ 🤖 *Bot:* ${config.settings.title}\n` +
+            `║│ 👑 *Owner:* ✦ 𝗖𝗢𝗗𝗘𝗫\n` +
+            `║│ ⚡ *Version:* 2.0.0\n` +
+            `║│ 🌐 *Library:* Baileys\n` +
+            `║│ 📦 *Commands:* CODEX AI-STYLE\n` +
+            `║│ 🔗 *Connection:* 𝗖𝗢𝗗𝗘𝗫 𝐨𝐟𝐟𝐢𝐜𝐢𝐚𝐥 V1.0\n` +
+            `║╰───────────────◆\n` +
+            `╚══════════════════❒\n\n` +
+            `📢 Channel: https://whatsapp.com/channel/0029Vb6sMEy96H4VI2w3I50F\n` +
+            `🐙 GitHub: ${config.settings.repo}`;
+
+        await reply(infoMessage);
+    }
+};
+
+
