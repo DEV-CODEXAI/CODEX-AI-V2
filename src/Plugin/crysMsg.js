@@ -60,7 +60,7 @@ const handleMessage = async (sock, m, store) => {
         if (!config().status.public && !isOwner) {
             if (autoReact)
                 sock.sendMessage(m.chat, {
-                    react: { text: '⚉', key: m.key }
+                    react: { text: '🪄', key: m.key }
                 }).catch(() => {});
             return;
         }
@@ -75,7 +75,7 @@ const handleMessage = async (sock, m, store) => {
             return reply(config().message.admin);
 
         if (cmd.botAdmin && !isBotAdmin)
-            return reply('𓉤 Make me an admin first!');
+            return reply(' Make me an admin first!');
 
         /* Cooldown */
         if (!isOwner && cooldown > 0) {
@@ -122,7 +122,7 @@ const handleMessage = async (sock, m, store) => {
         /* Reaction Success */
         if (autoReact) {
 
-            const successReact = cmd.reactions?.success || '👽';
+            const successReact = cmd.reactions?.success || '🥏';
 
             sock.sendMessage(m.chat, {
                 react: { text: successReact, key: m.key }
@@ -134,7 +134,7 @@ const handleMessage = async (sock, m, store) => {
         console.log(chalk.red('[MSG ERROR]'), err.message);
 
         sock.sendMessage(m.chat, {
-            react: { text: '🙈', key: m.key }
+            react: { text: '🤧', key: m.key }
         }).catch(() => {});
     }
 };
