@@ -1,3 +1,4 @@
+
 const axios = require('axios');
 
 module.exports = {
@@ -37,16 +38,13 @@ module.exports = {
         else if (args && args.length > 0) {
             const input = args.join(' ').trim();
             
-            // Check if it's a WhatsApp URL
             const waUrlMatch = input.match(/(?:https?:\/\/)?(?:chat\.whatsapp\.com\/|whatsapp\.com\/channel\/)?([a-zA-Z0-9_-]{20,})/);
             const waMeMatch = input.match(/(?:https?:\/\/)?wa\.me\/(\d+)/);
             const waNumberMatch = input.match(/(?:https?:\/\/)?api\.whatsapp\.com\/send\?phone=(\d+)/);
             
             if (waUrlMatch) {
-                // Group or Channel invite link
                 const code = waUrlMatch[1];
                 try {
-                    // Try to get group info from invite code
                     const groupInfo = await sock.groupGetInviteInfo(code).catch(() => null);
                     if (groupInfo) {
                         targetJid = groupInfo.id;
@@ -54,7 +52,6 @@ module.exports = {
                         extraInfo.groupName = groupInfo.subject;
                         extraInfo.participants = groupInfo.size;
                     } else {
-                        // Might be channel
                         targetJid = `${code}@newsletter`;
                         targetType = 'Channel (from invite)';
                     }
@@ -64,18 +61,15 @@ module.exports = {
                 }
             }
             else if (waMeMatch || waNumberMatch) {
-                // wa.me link
                 const number = (waMeMatch || waNumberMatch)[1];
                 targetJid = `${number}@s.whatsapp.net`;
                 targetType = 'User (from wa.me)';
             }
             else if (input.includes('@')) {
-                // Direct JID input
                 targetJid = input;
                 targetType = 'Direct JID';
             }
             else if (/^\d+$/.test(input)) {
-                // Plain number
                 targetJid = `${input}@s.whatsapp.net`;
                 targetType = 'User (from number)';
             }
@@ -105,25 +99,23 @@ module.exports = {
             targetType = 'Yourself';
         }
 
-        // If no JID found
         if (!targetJid) {
             return reply(
-                `✘ _*Could not extract JID*_\n\n` +
-                `*Usage:*\n` +
-                `• ${prefix}jid *(in group/channel)*\n` +
-                `• ${prefix}jid @user *(mention)*\n` +
-                `• ${prefix}jid *(reply to message)*\n` +
-                `• ${prefix}jid https://chat.whatsapp.com/xxx *(group link)*\n` +
-                `• ${prefix}jid https://whatsapp.com/channel/xxx *(channel link)*\n` +
-                `• ${prefix}jid https://wa.me/1234567890 *(wa.me link)*`
+                `✦ 𝘾𝞗𝘿𝞢𝙓 𝘼𝙄\n` +
+                `✘ 𝘾𝙤𝙪𝙡𝙙 𝙣𝙤𝙩 𝙚𝙭𝙩𝙧𝙖𝙘𝙩 𝙅𝙄𝘿\n\n` +
+                `𝙐𝙨𝙖𝙜𝙚:\n` +
+                `• ${prefix}𝙟𝙞𝙙 *(𝙞𝙣 𝙜𝙧𝙤𝙪𝙥/𝙘𝙝𝙖𝙣𝙣𝙚𝙡)*\n` +
+                `• ${prefix}𝙟𝙞𝙙 @𝙪𝙨𝙚𝙧 *(𝙢𝙚𝙣𝙩𝙞𝙤𝙣)*\n` +
+                `• ${prefix}𝙟𝙞𝙙 *(𝙧𝙚𝙥𝙡𝙮 𝙩𝙤 𝙢𝙚𝙨𝙨𝙖𝙜𝙚)*\n` +
+                `• ${prefix}𝙟𝙞𝙙 𝙝𝙩𝙩𝙥𝙨://𝙘𝙝𝙖𝙩.𝙬𝙝𝙖𝙩𝙨𝙖𝙥𝙥.𝙘𝙤𝙢/𝙭𝙭𝙭\n` +
+                `• ${prefix}𝙟𝙞𝙙 𝙝𝙩𝙩𝙥𝙨://𝙬𝙝𝙖𝙩𝙨𝙖𝙥𝙥.𝙘𝙤𝙢/𝙘𝙝𝙖𝙣𝙣𝙚𝙡/𝙭𝙭𝙭\n` +
+                `• ${prefix}𝙟𝙞𝙙 𝙝𝙩𝙩𝙥𝙨://𝙬𝙖.𝙢𝙚/1234567890`
             );
         }
 
-        // Clean JID for display
-        const cleanJid = targetJid.split(':')[0]; // Remove device suffix
+        const cleanJid = targetJid.split(':')[0]; 
         const number = cleanJid.split('@')[0];
         
-        // Determine server type
         let serverType = 'Unknown';
         if (cleanJid.endsWith('@s.whatsapp.net')) serverType = 'User/Personal';
         else if (cleanJid.endsWith('@g.us')) serverType = 'Group';
@@ -131,10 +123,8 @@ module.exports = {
         else if (cleanJid.endsWith('@broadcast')) serverType = 'Status/Broadcast';
         else if (cleanJid.includes('@')) serverType = cleanJid.split('@')[1];
 
-        // Try to get name
         let displayName = number;
         try {
-            // Check store
             const contact = sock.store?.contacts?.get?.(cleanJid);
             if (contact?.notify) displayName = contact.notify;
             else if (contact?.name) displayName = contact.name;
@@ -144,42 +134,41 @@ module.exports = {
             }
         } catch {}
 
-        // Build response
-        let response = `╭─❍ *JID EXTRACTOR* 🔍\n`;
-        response += `│\n`;
-        response += `│ *Type:* ${targetType}\n`;
-        response += `│ *Category:* ${serverType}\n`;
-        response += `│\n`;
-        response += `│ *Number/ID:* ${number}\n`;
-        response += `│ *Full JID:*\n`;
-        response += `│ \`\`\`${cleanJid}\`\`\`\n`;
+        let response = `╔═══〔 ❍ 𝙅𝙄𝘿 𝞢𝙓𝙏𝙍𝞐𝘾𝙏𝞗𝙍 ❍ 〕═══❒\n`;
+        response += `║╭───────────────◆\n`;
+        response += `║│ 🔍 𝙏𝙮𝙥𝙚: ${targetType}\n`;
+        response += `║│ 📁 𝘾𝙖𝙩𝙚𝙜𝙤𝙧𝙮: ${serverType}\n`;
+        response += `║│\n`;
+        response += `║│ 🔢 𝙉𝙪𝙢𝙗𝙚𝙧: ${number}\n`;
+        response += `║│ 🆔 𝙁𝙪𝙡𝙡 𝙅𝙄𝘿:\n`;
+        response += `║│ \`\`\`${cleanJid}\`\`\`\n`;
         
         if (displayName !== number) {
-            response += `│ *Name:* ${displayName}\n`;
+            response += `║│ 👤 𝙉𝙖𝙢𝙚: ${displayName}\n`;
         }
         
-        // Add extra info
         if (extraInfo.name) {
-            response += `│ *Title:* ${extraInfo.name}\n`;
+            response += `║│ 🏷️ 𝙏𝙞𝙩𝙡𝙚: ${extraInfo.name}\n`;
         }
         if (extraInfo.participants) {
-            response += `│ *Members:* ${extraInfo.participants}\n`;
+            response += `║│ 👥 𝙈𝙚𝙢𝙗𝙚𝙧𝙨: ${extraInfo.participants}\n`;
         }
         if (extraInfo.owner) {
-            response += `│ *Owner:* ${extraInfo.owner.split('@')[0]}\n`;
+            response += `║│ 👑 𝞗𝙬𝙣𝙚𝙧: ${extraInfo.owner.split('@')[0]}\n`;
         }
         if (extraInfo.totalMentions) {
-            response += `│ *Total Mentions:* ${extraInfo.totalMentions}\n`;
+            response += `║│ 📢 𝙏𝙤𝙩𝙖𝙡 𝙈𝙚𝙣𝙩𝙞𝙤𝙣𝙨: ${extraInfo.totalMentions}\n`;
         }
         
-        response += `╰──────────────────`;
+        response += `║╰───────────────◆\n`;
+        response += `╚══════════════════❒\n`;
+        response += ` ╰─ 𓄄 \`\`\`𝘾𝞗𝘿𝞢𝙓 𝘼𝙄\`\`\``;
 
-        // Copy button
         await sock.sendMessage(m.chat, {
             text: response,
             contextInfo: {
                 externalAdReply: {
-                    title: 'JID Extracted',
+                    title: '𝙅𝙄𝘿 𝞢𝙓𝙏𝙍𝞐𝘾𝙏𝞢𝘿',
                     body: number,
                     renderLargerThumbnail: false
                 }
@@ -187,12 +176,12 @@ module.exports = {
             buttons: [
                 {
                     buttonId: 'copy',
-                    buttonText: { displayText: '📋 Copy JID' },
+                    buttonText: { displayText: '📋 𝘾𝙤𝙥𝙮 𝙅𝙄𝘿' },
                     type: 1,
                     nativeFlowInfo: {
                         name: 'cta_copy',
                         paramsJson: JSON.stringify({
-                            display_text: '📋 Copy JID',
+                            display_text: '📋 𝘾𝙤𝙥𝙮 𝙅𝙄𝘿',
                             copy_code: cleanJid
                         })
                     }
@@ -202,3 +191,5 @@ module.exports = {
         }, { quoted: m });
     }
 };
+
+
