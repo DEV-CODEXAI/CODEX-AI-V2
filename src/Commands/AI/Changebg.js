@@ -78,10 +78,10 @@ module.exports = {
                 return reply('✘ 🥏 𝞢𝙈𝙋𝙏𝙔 𝙄𝙈𝘼𝙂𝞢 𝙍𝞢𝘾𝞢𝙄𝙑𝞢𝘿');
 
             if (result.length > 5 * 1024 * 1024)
-                return reply('🥏  𝙍𝞢𝙎𝞐𝙇𝙏 𝞢𝙓𝘾𝞢𝞢𝘿𝙎 𝙒𝙃𝘼𝙏𝙎𝘼𝙋𝙋 𝟱𝙈𝘽 𝙇𝙄𝙈𝙄𝙏');
+                return reply('🥏  𝙍𝞢𝙎𝙐𝙇𝙏 𝞢𝙓𝘾𝞢𝞢𝘿𝙎 𝙒𝙃𝘼𝙏𝙎𝘼𝙋𝙋 𝟱𝙈𝘽 𝙇𝙄𝙈𝙄𝙏');
             
             let caption = `✦ 𝘾𝞗𝘿𝞢𝙓 𝘼𝙄 - 𝘽𝙂 𝘾𝙃𝘼𝙉𝙂𝞢𝙍\n\n`;
-            caption += `✓ 𝘽𝘼𝘾𝙆𝙂𝙍𝞗𝙐𝙉𝘿 𝘾𝙃𝘼𝙉𝙂𝞢𝘿 𝙎𝞐𝘾𝘾𝞢𝙎𝙎𝙁𝞐𝙇𝙇𝙔\n\n`;
+            caption += `✓ 𝘽𝘼𝘾𝙆𝙂𝙍𝞗𝙐𝙉𝘿 𝘾𝙃𝘼𝙉𝙂𝞢𝘿 𝙎𝙐𝘾𝘾𝞢𝙎𝙎𝙁𝞐𝙇𝙇𝙔\n\n`;
             caption += `🪄🥏 𝙋𝙍𝞗𝙈𝙋𝙏:\n< ${prompt.toUpperCase()} >\n\n`;
             caption += `✨ _𝙂𝞢𝙉𝞢𝙍𝘼𝙏𝞢𝘿 𝘽𝙔 𝘾𝞗𝘿𝞢𝙓 𝘼𝙄_`;
 
@@ -101,7 +101,7 @@ module.exports = {
                 return reply('🥏  𝘼𝙄 𝙎𝞢𝙍𝙑𝞢𝙍 𝞐𝙉𝘼𝙑𝘼𝙄𝙇𝘼𝘽𝙇𝞢');
 
             if (err.code === 'ECONNABORTED')
-                return reply('🥏  𝙋𝙍𝞗𝘾𝞢𝙎𝙎𝙄𝙉𝙂 𝙏𝙄𝙈𝞢𝞗𝞐𝙏');
+                return reply('🥏  𝙋𝙍𝞗𝘾𝞢𝙎𝙎𝙄𝙉𝙂 𝙏𝙄𝙈𝞢𝞗𝙐𝙏');
 
             reply(`✘ 🥏 < ${err.message?.toUpperCase() || '𝞐𝙉𝙆𝙉𝞗𝙒𝙉 𝞢𝙍𝙍𝞗𝙍'} >`);
         }
