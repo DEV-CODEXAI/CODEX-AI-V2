@@ -1,20 +1,17 @@
+
 const fetch = require("node-fetch");
 
 module.exports = {
     name: "meme",
     alias: ["memes", "cheems"],
     category: "fun",
-     // ⭐ Reaction config
     reactions: {
         start: '💬',
         success: '🤗'
     },
-    
 
     execute: async (sock, m, { reply }) => {
-
         try {
-
             await sock.sendPresenceUpdate("composing", m.key.remoteJid);
 
             const response = await fetch(
@@ -44,14 +41,7 @@ module.exports = {
                 }
             ];
 
-            const caption = `
-╭─❍ *𝗖𝗢𝗗𝗘𝗫 MEME*
-│
-│ 🐕 Cheems Meme Loaded
-│
-│ Use buttons below
-╰─🥏 Powered by 𝗖𝗢𝗗𝗘𝗫 𝐀𝐈
-            `.trim();
+            const caption = `✦ **CODEX MEME**\n\n❍ **Type:** Cheems Meme Loaded\n❍ **Status:** Online\n\nUse the buttons below to interact.\n\n**Powered by CODEX AI**`.trim();
 
             await sock.sendMessage(
                 m.key.remoteJid,
@@ -67,10 +57,10 @@ module.exports = {
             await sock.sendPresenceUpdate("paused", m.key.remoteJid);
 
         } catch (error) {
-
             console.error("Meme Command Error:", error.message);
-
-            await reply("❌ Failed to fetch meme.");
+            await reply(`✦ **CODEX ERROR**\n❌ Failed to fetch meme.`);
         }
     }
 };
+
+
