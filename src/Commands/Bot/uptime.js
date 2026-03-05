@@ -36,9 +36,9 @@ module.exports = {
 
         const botName = getVar('botName', config.settings?.title || 'CODEX AI');
 
-        let responseText = `╔═══〔 ❍ *${botName.toUpperCase()}* ❍ 〕══❒\n`;
+        let responseText = `╔═══〔 ❍ *${botName.toUpperCase()}* ❍ 〕═❒\n`;
         responseText += `║╭───────────────◆\n`;
-        responseText += `║│ ❍ *UPTIME:* `${uptimeString}`\n`;
+        responseText += `║│ ❍ *UPTIME:* ${uptimeString}\n`;
         responseText += `║│ ❍ *STATUS:* 🚀Online\n`;
         responseText += `║╰───────────────◆\n`;
         responseText += `╚══════════════════❒\n`;
@@ -49,4 +49,3 @@ module.exports = {
 };
 
 
-          
