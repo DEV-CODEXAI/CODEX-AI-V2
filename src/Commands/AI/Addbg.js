@@ -11,7 +11,7 @@ module.exports = {
 
     execute: async (sock, m, { args, reply, prefix }) => {
         try {
-            if (!m.quoted) return reply(`✘ 𝙍𝞢𝙋𝙇𝙔 𝙏𝞗 𝘼𝙉 𝙄𝙈𝘼𝙂𝞢\n𝞢𝙓𝘼𝙈𝙋𝙇𝞢: ${prefix}changebg beach`);
+            if (!m.quoted) return reply(`✘ 𝙍𝞢𝙋𝙇𝙔 𝙏𝞗 𝘼𝙉 𝙄𝙈𝘼𝙂𝞢\n𝞢𝙓𝘼𝙈𝙋𝙇𝞢: ${prefix}changebg island`);
 
             const prompt = args.join(' ').trim();
             if (!prompt) return reply(`✘ 𝙋𝙍𝞗𝙑𝙄𝘿𝞢 𝘽𝘼𝘾𝙆𝙂𝙍𝞗𝙐𝙉𝘿 𝘿𝞢𝙎𝘾𝙍𝙄𝙋𝙏𝙄𝞗𝙉\n𝞢𝙓𝘼𝙈𝙋𝙇𝞢: ${prefix}changebg beach sunset`);
@@ -55,7 +55,7 @@ module.exports = {
             if (finalBuffer.length > 5 * 1024 * 1024) return reply('✘ 𝙍𝞢𝙎𝞐𝙇𝙏 𝞢𝙓𝘾𝞢𝞢𝘿𝙎 𝙒𝙃𝘼𝙏𝙎𝘼𝙋𝙋 𝟱𝙈𝘽 𝙇𝙄𝙈𝙄𝙏');
 
             let caption = `✦ 𝘾𝞗𝘿𝞢𝙓 𝘼𝙄 - 𝘽𝙂 𝘾𝙃𝘼𝙉𝙂𝞢𝙍\n\n`;
-            caption += `✓ 𝘽𝘼𝘾𝙆𝙂𝙍𝞗𝙐𝙉𝘿 𝘾𝙃𝘼𝙉𝙂𝞢𝘿 𝙎𝞐𝘾𝘾𝞢𝙎𝙎𝙁𝞐𝙇𝙇𝙔\n\n`;
+            caption += `✓ 𝘽𝘼𝘾𝙆𝙂𝙍𝞗𝙐𝙉𝘿 𝘾𝙃𝘼𝙉𝙂𝞢𝘿 𝙎𝙐𝘾𝘾𝞢𝙎𝙎𝙁𝙐𝙇𝙇𝙔\n\n`;
             caption += `✦ 𝙋𝙍𝞗𝙈𝙋𝙏: < ${prompt.toUpperCase()} >\n\n`;
             caption += `✨ _𝙂𝞢𝙉𝞢𝙍𝘼𝙏𝞢𝘿 𝘽𝙔 𝘾𝞗𝘿𝞢𝙓 𝘼𝙄_`;
 
@@ -64,9 +64,9 @@ module.exports = {
         } catch (err) {
             console.error('[CHANGE BG ERROR]', err);
             
-            if (err.response?.status === 402) return reply('✘ 𝙍𝞢𝙈𝞗𝙑𝞢.𝘽𝙂 𝘾𝙍𝞢𝘿𝙄𝙏𝙎 𝞢𝙓𝙃𝘼𝞐𝙎𝙏𝞢𝘿');
+            if (err.response?.status === 402) return reply('✘ 𝙍𝞢𝙈𝞗𝙑𝞢.𝘽𝙂 𝘾𝙍𝞢𝘿𝙄𝙏𝙎 𝞢𝙓𝙃𝘼𝙎𝙐𝙎𝙏𝞢𝘿');
             if (err.response?.status === 401) return reply('✘ 𝙄𝙉𝙑𝘼𝙇𝙄𝘿 𝙍𝞢𝙈𝞗𝙑𝞢.𝘽𝙂 𝘼𝙋𝙄 𝙆𝞢𝙔');
-            if (err.code === 'ECONNABORTED') return reply('✘ 𝙋𝙍𝞗𝘾𝞢𝙎𝙎𝙄𝙉𝙂 𝙏𝙄𝙈𝞢𝞗𝞐𝙏');
+            if (err.code === 'ECONNABORTED') return reply('✘ 𝙋𝙍𝞗𝘾𝞢𝙎𝙎𝙄𝙉𝙂 𝙏𝙄𝙈𝞢𝞗𝙐𝙏');
             
             reply(`✘ 𝞢𝙍𝙍𝞗𝙍: ${err.message}`);
         }
