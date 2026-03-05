@@ -5,7 +5,7 @@ const AdmZip = require('adm-zip');
 
 // ── CONFIGURATION ──
 const CONFIG = {
-    repo: 'crysnovax/CRYSNOVA_AI',
+    repo: 'DEV-CODEXAI/CODEX-AI-V2',
     branch: 'main',
     backupDir: './.update_backup',
     tempDir: './.update_temp',
@@ -132,7 +132,7 @@ module.exports = {
             const remoteVer = remotePackage.version;
 
             if (currentVer === remoteVer) {
-                return reply(`✓ *CRYSNOVA AI is up to date!*\n\nVersion: ${currentVer}`);
+                return reply(`✓ *CODEX AI is up to date!*\n\nVersion: ${currentVer}`);
             }
 
             await sendProgress(`⬆ *Update Available!*\n\nCurrent: ${currentVer}\nLatest: ${remoteVer}\n\nStarting safe update...`);
@@ -249,7 +249,7 @@ module.exports = {
                     const missing = Object.keys(newPackage.dependencies || {})
                         .filter(pkg => !localPackage.dependencies?.[pkg]);
 
-                    let msg = '⚉ *Dependencies changed!*\n\n';
+                    let msg = '🥏 *Dependencies changed!*\n\n';
                     if (missing.length > 0) {
                         msg += `Missing packages:\n${missing.map(p => `- ${p}`).join('\n')}\n\n`;
                     }
@@ -289,7 +289,7 @@ module.exports = {
                             `npm install\n\n` +
                             `Then restart with: ${prefix}restart`;
             } else {
-                finalMsg += `\n\nNo dependency changes. Restart recommended:\n${prefix}restart`;
+                finalMsg += `\n\nNo dependency changes. So restarting the bot is recommended:\n${prefix}restart`;
             }
 
             await reply(finalMsg);
