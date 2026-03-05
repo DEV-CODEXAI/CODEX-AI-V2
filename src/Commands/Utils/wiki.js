@@ -99,20 +99,15 @@ module.exports = {
             // Step 4: Caption
 
             const caption = `
-
-┏━━━━━━━━━━〔 ⚉ WIKIPEDIA RESULT ⚉ 〕━━━━━━━━┓
-
-┃
-
-┃  🏷️ Title  : ${title}
-
-┃  📝 Summary: ${description}
-
-┃  📎 Link   : ${pageUrl}
-
-┃  🖋 Author : ${author}
-
-┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+╔═══❍𝙒𝙄𝙆𝙄𝙋𝞢𝘿𝙄𝞐 𝙍𝞢𝙎𝙐𝙇𝙏❍❒
+║╭───────────────◆
+║│ 🏷️ 𝙏𝙞𝙩𝙡𝙚: ${title}
+║│ 📝 𝙎𝙪𝙢𝙢𝙖𝙧𝙮: ${description}
+║│ 📎 𝙇𝙞𝙣𝙠: ${pageUrl}
+║│ 🖋️ 𝘼𝙪𝙩𝙝𝙤𝙧: ${author}
+║╰───────────────◆
+╚══════════════════❒
+ ╰─ 🥏 \`\`\`𝘾𝞗𝘿𝞢𝙓 𝘼𝙄\`\`\``;
 
             `;
 
@@ -156,7 +151,7 @@ module.exports = {
 
             await sock.sendMessage(m.chat, { react: { text: '❌', key: m.key } }).catch(() => {});
 
-            return reply('✘⚉ Error fetching Wikipedia info');
+            return reply('✘🥏 Error fetching Wikipedia info');
 
         }
 
