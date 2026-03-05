@@ -1,1 +1,181 @@
-const a0_0x536411=a0_0x5452;(function(_0x1e3232,_0x6c75c5){const _0x80ef3c=a0_0x5452,_0x4f7196=_0x1e3232();while(!![]){try{const _0x32442b=-parseInt(_0x80ef3c(0x14a))/0x1*(parseInt(_0x80ef3c(0x130))/0x2)+-parseInt(_0x80ef3c(0x11a))/0x3*(parseInt(_0x80ef3c(0x151))/0x4)+-parseInt(_0x80ef3c(0x133))/0x5*(-parseInt(_0x80ef3c(0x11e))/0x6)+-parseInt(_0x80ef3c(0x13e))/0x7*(parseInt(_0x80ef3c(0x126))/0x8)+-parseInt(_0x80ef3c(0x129))/0x9*(parseInt(_0x80ef3c(0x12e))/0xa)+parseInt(_0x80ef3c(0x150))/0xb*(parseInt(_0x80ef3c(0x120))/0xc)+parseInt(_0x80ef3c(0x121))/0xd;if(_0x32442b===_0x6c75c5)break;else _0x4f7196['push'](_0x4f7196['shift']());}catch(_0x7b8b54){_0x4f7196['push'](_0x4f7196['shift']());}}}(a0_0x32f6,0x620da));const axios=require(a0_0x536411(0x13a)),fs=require('fs'),path=require(a0_0x536411(0x14f)),SIG=a0_0x536411(0x118),SETTINGS_FILE=path[a0_0x536411(0x122)](__dirname,a0_0x536411(0x12d));function isGroup(_0x57c095){const _0x2465b8=a0_0x536411;return _0x57c095&&_0x57c095[_0x2465b8(0x136)](_0x2465b8(0x152));}function loadSettings(){const _0x591579=a0_0x536411;try{if(fs[_0x591579(0x139)](SETTINGS_FILE))return JSON[_0x591579(0x13f)](fs[_0x591579(0x154)](SETTINGS_FILE,_0x591579(0x144)));}catch(_0x18c3fc){console[_0x591579(0x134)](_0x591579(0x123),_0x18c3fc[_0x591579(0x14d)]);}return{};}function saveSettings(_0x549948){const _0x34d554=a0_0x536411;try{fs[_0x34d554(0x147)](path[_0x34d554(0x14b)](SETTINGS_FILE),{'recursive':!![]}),fs['writeFileSync'](SETTINGS_FILE,JSON[_0x34d554(0x15c)](_0x549948,null,0x2));}catch(_0x3aae49){console[_0x34d554(0x134)](_0x34d554(0x13b),_0x3aae49[_0x34d554(0x14d)]);}}function a0_0x32f6(){const _0x2f13d0=['tagOnly','mkdirSync','enabled','key','92aakTYd','dirname','data','message','\x0aYou\x20are\x20Crysnova\x20AI\x20Assistant.\x0aReply\x20naturally\x20and\x20intelligently.\x20Be\x20concise\x20and\x20helpful.\x0aAlways\x20behave\x20as\x20Crysnova\x20AI.\x0a\x0aUser\x20Question:\x0a','path','3840463EyULYG','5816gpjHJR','@g.us','paused','readFileSync','tag','get','composing','string','exports','success','Crysnova\x20AI\x20–\x20private\x20chat\x20only','stringify','&gt;','[CRYSNOVA\x20AUTO\x20ERROR]','‎‎‎‎','sendPresenceUpdate','741sBtjiC','\x5c${','ai\x20<message>','ai\x20on\x20all\x0a•\x20','60qVOCmL','chat','12olFJYr','18734131qylRLP','join','[CRYSNOVA]\x20Failed\x20to\x20load\x20settings:','sendMessage','all','36400BiNYNn','🏷️\x20Tag\x20Only','Crysnova\x20Plugin\x20Error:','36NIGYun','&lt;','off','startsWith','../../../database/crysnova-settings.json','1812430byMuEy','\x5c$&','10294MYLmWi','&model=gpt-4.5','https://all-in-1-ais.officialhectormanuel.workers.dev/?query=','209645XROmZV','error','text','endsWith','replace','toLowerCase','existsSync','axios','[CRYSNOVA]\x20Failed\x20to\x20save\x20settings:','𓉤\x20_*Crysnova\x20response\x20invalid*_.','content','385FDJbnk','parse','remoteJid','trim','length','𓄄\x20`I\x20amtired`.\x20_ask\x20again\x20later_.','utf8','status'];a0_0x32f6=function(){return _0x2f13d0;};return a0_0x32f6();}function getChatSettings(_0x57bfb5){const _0x5dcda0=a0_0x536411;if(typeof _0x57bfb5!==_0x5dcda0(0x158))return{'enabled':![],'tagOnly':![]};const _0x20d33d=loadSettings();return{'enabled':_0x20d33d[_0x57bfb5]?.[_0x5dcda0(0x148)]||![],'tagOnly':_0x20d33d[_0x57bfb5]?.[_0x5dcda0(0x146)]||![]};}function a0_0x5452(_0x3da4f9,_0x14b569){_0x3da4f9=_0x3da4f9-0x116;const _0x32f6d9=a0_0x32f6();let _0x54525d=_0x32f6d9[_0x3da4f9];return _0x54525d;}function setChatSettings(_0x1645da,_0xedcd3f,_0x217af9=![]){const _0x4ee3a5=a0_0x536411;if(typeof _0x1645da!==_0x4ee3a5(0x158))return![];const _0x5837e3=loadSettings();return _0x5837e3[_0x1645da]={'enabled':_0xedcd3f,'tagOnly':_0x217af9},saveSettings(_0x5837e3),!![];}function escapePrompt(_0x1581cc){const _0x5bf70c=a0_0x536411;return _0x1581cc['replace'](/[\\"]/g,_0x5bf70c(0x12f))['replace'](/</g,_0x5bf70c(0x12a))[_0x5bf70c(0x137)](/>/g,_0x5bf70c(0x116))[_0x5bf70c(0x137)](/`/g,'\x5c`')[_0x5bf70c(0x137)](/\${/g,_0x5bf70c(0x11b));}module[a0_0x536411(0x159)]={'name':'ai','alias':[a0_0x536411(0x11f),'crysnova','crys'],'category':'ai','desc':a0_0x536411(0x15b),'execute':async(_0x68c85e,_0x190092,{args:_0x4ec99b,text:_0x3d4165,prefix:_0x2eae70,reply:_0x2cb2ab})=>{const _0x3a3530=a0_0x536411,_0x481106=_0x190092[_0x3a3530(0x149)]['remoteJid'],_0x2e5e36=_0x4ec99b[0x0]?.[_0x3a3530(0x138)](),_0x4e18b6=_0x4ec99b[0x1]?.['toLowerCase']();if(isGroup(_0x481106)){try{await _0x68c85e['sendMessage'](_0x481106,{'react':{'text':'👀','key':_0x190092['key']}});}catch(_0x1023f6){}return;}if(_0x2e5e36==='on'&&(_0x4e18b6===_0x3a3530(0x125)||_0x4e18b6===_0x3a3530(0x155))){const _0xfd0df5=_0x4e18b6==='tag';setChatSettings(_0x481106,!![],_0xfd0df5);return;}if(_0x2e5e36===_0x3a3530(0x12b)){setChatSettings(_0x481106,![],![]);return;}if(_0x2e5e36===_0x3a3530(0x145)){const _0xd73adc=getChatSettings(_0x481106),_0xc4ab59=_0xd73adc[_0x3a3530(0x148)]?_0xd73adc[_0x3a3530(0x146)]?_0x3a3530(0x127):'⚉\x20_*All\x20Messages*_':'✪\x20`Disabled`';return _0x2cb2ab(SIG+('📊\x20*Crysnova\x20Status*\x0a\x0aMode:\x20'+_0xc4ab59));}const _0x4e9474=_0x3d4165?.[_0x3a3530(0x141)]();if(!_0x4e9474)return _0x2cb2ab(SIG+('🤖\x20*Crysnova\x20AI*\x0a\x0a*Control:*\x0a•\x20'+_0x2eae70+_0x3a3530(0x11d)+_0x2eae70+'ai\x20on\x20tag\x0a•\x20'+_0x2eae70+'ai\x20off\x0a\x0a*Chat:*\x20'+_0x2eae70+_0x3a3530(0x11c)));if(_0x190092[_0x3a3530(0x135)]&&_0x190092['text'][_0x3a3530(0x12c)](SIG))return;try{await _0x68c85e[_0x3a3530(0x119)](_0x3a3530(0x157),_0x481106);const _0x426ba7=escapePrompt(_0x4e9474),_0x549524=_0x3a3530(0x14e)+_0x426ba7+'\x0a',_0x22dcb8=_0x3a3530(0x132)+encodeURIComponent(_0x549524)+_0x3a3530(0x131),_0x579571=await axios[_0x3a3530(0x156)](_0x22dcb8,{'timeout':0xea60}),_0x3674d2=_0x579571[_0x3a3530(0x14c)];if(_0x3674d2?.[_0x3a3530(0x15a)]&&_0x3674d2?.[_0x3a3530(0x14d)]?.['content']){const _0x26e258=SIG+_0x3674d2['message'][_0x3a3530(0x13d)];await _0x68c85e[_0x3a3530(0x124)](_0x481106,{'text':_0x26e258},{'quoted':_0x190092});}else await _0x2cb2ab(SIG+_0x3a3530(0x13c));await _0x68c85e[_0x3a3530(0x119)](_0x3a3530(0x153),_0x481106);}catch(_0x51e0e9){console['error'](_0x3a3530(0x128),_0x51e0e9[_0x3a3530(0x14d)]),await _0x2cb2ab(SIG+_0x3a3530(0x143));}},'onMessage':async(_0x47216e,_0x22a498)=>{const _0x40c523=a0_0x536411,_0x2ec8fc=_0x22a498['key'][_0x40c523(0x140)];if(isGroup(_0x2ec8fc))return;if(_0x22a498[_0x40c523(0x135)]&&_0x22a498['text'][_0x40c523(0x12c)](SIG))return;const _0x35a18b=getChatSettings(_0x2ec8fc);if(!_0x35a18b[_0x40c523(0x148)])return;const _0x175ac4=['.','!','/','#','$','%','&'];if(_0x22a498[_0x40c523(0x135)]&&_0x175ac4['some'](_0x57fc24=>_0x22a498[_0x40c523(0x135)][_0x40c523(0x12c)](_0x57fc24)))return;if(!_0x22a498[_0x40c523(0x135)]||_0x22a498[_0x40c523(0x135)][_0x40c523(0x141)]()[_0x40c523(0x142)]===0x0)return;try{await _0x47216e[_0x40c523(0x119)](_0x40c523(0x157),_0x2ec8fc);const _0x421993=escapePrompt(_0x22a498['text']),_0x9196ee=_0x40c523(0x14e)+_0x421993+'\x0a',_0x3b0dac=_0x40c523(0x132)+encodeURIComponent(_0x9196ee)+'&model=gpt-4.5',_0xbf986a=await axios[_0x40c523(0x156)](_0x3b0dac,{'timeout':0xea60}),_0x2ec825=_0xbf986a[_0x40c523(0x14c)];if(_0x2ec825?.[_0x40c523(0x15a)]&&_0x2ec825?.['message']?.[_0x40c523(0x13d)]){const _0x280fb6=SIG+_0x2ec825[_0x40c523(0x14d)]['content'];await _0x47216e[_0x40c523(0x124)](_0x2ec8fc,{'text':_0x280fb6},{'quoted':_0x22a498});}await _0x47216e[_0x40c523(0x119)](_0x40c523(0x153),_0x2ec8fc);}catch(_0x56113b){console['error'](_0x40c523(0x117),_0x56113b[_0x40c523(0x14d)]);}}};
+
+const axios = require('axios');
+const fs = require('fs');
+const path = require('path');
+
+// Branding & Configuration
+const SIG = '‎‎‎‎'; // Your invisible signature/prefix
+const SETTINGS_FILE = path.join(__dirname, '../../../database/crysnova-settings.json');
+
+/**
+ * Logic: Group Check
+ */
+function isGroup(jid) {
+    return jid && jid.endsWith('@g.us');
+}
+
+/**
+ * Logic: Load Settings from JSON
+ */
+function loadSettings() {
+    try {
+        if (fs.existsSync(SETTINGS_FILE)) {
+            return JSON.parse(fs.readFileSync(SETTINGS_FILE, 'utf8'));
+        }
+    } catch (err) {
+        console.error('[CODEX] Failed to load settings:', err.message);
+    }
+    return {};
+}
+
+/**
+ * Logic: Save Settings to JSON
+ */
+function saveSettings(settings) {
+    try {
+        fs.mkdirSync(path.dirname(SETTINGS_FILE), { recursive: true });
+        fs.writeFileSync(SETTINGS_FILE, JSON.stringify(settings, null, 2));
+    } catch (err) {
+        console.error('[CODEX] Failed to save settings:', err.message);
+    }
+}
+
+function getChatSettings(jid) {
+    if (typeof jid !== 'string') return { enabled: false, tagOnly: false };
+    const settings = loadSettings();
+    return {
+        enabled: settings[jid]?.enabled || false,
+        tagOnly: settings[jid]?.tagOnly || false
+    };
+}
+
+function setChatSettings(jid, enabled, tagOnly = false) {
+    if (typeof jid !== 'string') return false;
+    const settings = loadSettings();
+    settings[jid] = { enabled, tagOnly };
+    saveSettings(settings);
+    return true;
+}
+
+/**
+ * Logic: Clean prompt for API
+ */
+function escapePrompt(prompt) {
+    return prompt
+        .replace(/[\\"]/g, '\\$&')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/`/g, '\\`')
+        .replace(/\${/g, '\\${');
+}
+
+module.exports = {
+    name: 'ai',
+    alias: ['bot', 'codex', 'cdxai'],
+    category: 'ai',
+    desc: 'Chat with CODEX AI (GPT-4.5)',
+
+    execute: async (sock, m, { args, text, prefix, reply }) => {
+        const jid = m.key.remoteJid;
+        const cmd = args[0]?.toLowerCase();
+        const subCmd = args[1]?.toLowerCase();
+
+        // Check if Group (Original logic: React and return)
+        if (isGroup(jid)) {
+            try { await sock.sendMessage(jid, { react: { text: '👀', key: m.key } }); } catch (e) {}
+            return;
+        }
+
+        // Control Logic: ON / OFF
+        if (cmd === 'on' && (subCmd === 'all' || subCmd === 'tag')) {
+            const isTagOnly = subCmd === 'tag';
+            setChatSettings(jid, true, isTagOnly);
+            return reply(`📊 *CODEX AI Status*\n\nMode: ${isTagOnly ? '🏷️ Tag Only' : '🥏 _*All Messages*_'}`);
+        }
+
+        if (cmd === 'off') {
+            setChatSettings(jid, false, false);
+            return reply(`📊 *CODEX AI Status*\n\nMode: ✪ \`Disabled\``);
+        }
+
+        if (cmd === 'status') {
+            const settings = getChatSettings(jid);
+            const mode = settings.enabled ? (settings.tagOnly ? '🏷️ Tag Only' : '🥏 _*All Messages*_') : '✪ `Disabled`';
+            return reply(SIG + `📊 *CODEX AI Status*\n\nMode: ${mode}`);
+        }
+
+        // Chat Logic
+        const promptText = text?.trim();
+        if (!promptText) {
+            return reply(SIG + `🤖 *CODEX AI*\n\n*Control:*\n• ${prefix}ai on all\n• ${prefix}ai on tag\n• ${prefix}ai off\n\n*Chat:* ${prefix}ai <message>`);
+        }
+
+        // Avoid self-reply loops
+        if (m.text && m.text.startsWith(SIG)) return;
+
+        try {
+            await sock.sendPresenceUpdate('composing', jid);
+            
+            const escaped = escapePrompt(promptText);
+            const systemContext = `\nYou are CODEX AI Assistant.\nReply naturally and intelligently. Be concise and helpful.\nAlways behave as CODEX AI.\n\nUser Question:\n`;
+            
+            const apiUrl = `https://all-in-1-ais.officialhectormanuel.workers.dev/?query=${encodeURIComponent(systemContext + escaped)}&model=gpt-4.5`;
+            
+            const response = await axios.get(apiUrl, { timeout: 60000 });
+            const result = response.data;
+
+            if (result?.status && result?.message?.content) {
+                const out = SIG + result.message.content;
+                await sock.sendMessage(jid, { text: out }, { quoted: m });
+            } else {
+                await reply(SIG + `𓉤 _*CODEX response invalid*_.`);
+            }
+            
+            await sock.sendPresenceUpdate('paused', jid);
+        } catch (err) {
+            console.error('[CODEX AI ERROR]', err.message);
+            await reply(SIG + `𓄄 \`I am tired\`. _ask again later_.`);
+        }
+    },
+
+    /**
+     * Auto-Response Logic (onMessage)
+     */
+    onMessage: async (sock, m) => {
+        const jid = m.key.remoteJid;
+        if (isGroup(jid)) return;
+        if (m.text && m.text.startsWith(SIG)) return;
+
+        const settings = getChatSettings(jid);
+        if (!settings.enabled) return;
+
+        // Skip if it's a command
+        const prefixes = ['.', '!', '/', '#', '$', '%', '&'];
+        if (m.text && prefixes.some(p => m.text.startsWith(p))) return;
+        if (!m.text || m.text.trim().length === 0) return;
+
+        try {
+            await sock.sendPresenceUpdate('composing', jid);
+            
+            const escaped = escapePrompt(m.text);
+            const systemContext = `\nYou are CODEX AI Assistant.\nReply naturally and intelligently. Be concise and helpful.\nAlways behave as CODEX AI.\n\nUser Question:\n`;
+            
+            const apiUrl = `https://all-in-1-ais.officialhectormanuel.workers.dev/?query=${encodeURIComponent(systemContext + escaped)}&model=gpt-4.5`;
+            
+            const response = await axios.get(apiUrl, { timeout: 60000 });
+            const result = response.data;
+
+            if (result?.status && result?.message?.content) {
+                const out = SIG + result.message.content;
+                await sock.sendMessage(jid, { text: out }, { quoted: m });
+            }
+            
+            await sock.sendPresenceUpdate('paused', jid);
+        } catch (err) {
+            console.error('[CODEX AUTO ERROR]', err.message);
+        }
+    }
+};
+
+
+                                                       
