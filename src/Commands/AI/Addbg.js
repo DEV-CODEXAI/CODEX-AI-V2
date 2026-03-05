@@ -1,1 +1,76 @@
-function a0_0x2ccb(_0x14c0ad,_0x4b47f6){_0x14c0ad=_0x14c0ad-0x159;const _0x5a55d5=a0_0x5a55();let _0x2ccb3a=_0x5a55d5[_0x14c0ad];return _0x2ccb3a;}function a0_0x5a55(){const _0x5eebb2=['✓\x20Background\x20changed\x20successfully\x0a\x0a','✘\x20Empty\x20AI\x20result','✘\x20Remove.bg\x20credits\x20exhausted','getHeaders','changebg\x20beach\x20sunset','1670378bEMKRD','data','1971005vAgipA','8sncYbR','trim','✘\x20Error:\x20','https://api.nexray.web.id/ai/gptimage','✘\x20Result\x20exceeds\x20WhatsApp\x205MB\x20limit','[CHANGE\x20BG\x20ERROR]','code','✘\x20Processing\x20timeout','post','8449335eVBExw','✘\x20Reply\x20to\x20an\x20image\x0aExample:\x20','✦\x20Prompt:\x0a<','status','response','auto','message','axios','join','1721949Exbatz','28EPaubf','✘\x20Provide\x20background\x20description\x0aExample:\x20','✦\x20Processing\x20image,\x20please\x20wait...','append','quoted','test','10547516VhjGAm','197094vsaDib','✘\x20AI\x20background\x20generation\x20failed','✘\x20Invalid\x20remove.bg\x20API\x20key','image.jpg','addbg','arraybuffer','transparent.png','image_file','length','6120870LNvaMe','image/jpeg','from'];a0_0x5a55=function(){return _0x5eebb2;};return a0_0x5a55();}const a0_0x36a6c3=a0_0x2ccb;(function(_0x246594,_0x30c801){const _0xdfc5e3=a0_0x2ccb,_0xb0633f=_0x246594();while(!![]){try{const _0x3612d6=-parseInt(_0xdfc5e3(0x181))/0x1+-parseInt(_0xdfc5e3(0x16c))/0x2+-parseInt(_0xdfc5e3(0x15b))/0x3*(-parseInt(_0xdfc5e3(0x182))/0x4)+-parseInt(_0xdfc5e3(0x16e))/0x5+parseInt(_0xdfc5e3(0x164))/0x6+parseInt(_0xdfc5e3(0x15a))/0x7+-parseInt(_0xdfc5e3(0x16f))/0x8*(-parseInt(_0xdfc5e3(0x178))/0x9);if(_0x3612d6===_0x30c801)break;else _0xb0633f['push'](_0xb0633f['shift']());}catch(_0x1b70d8){_0xb0633f['push'](_0xb0633f['shift']());}}}(a0_0x5a55,0xeddd7));const axios=require(a0_0x36a6c3(0x17f)),FormData=require('form-data');module['exports']={'name':'newbg','alias':[a0_0x36a6c3(0x15f)],'desc':'Smart\x20AI\x20background\x20changer\x20(remove\x20bg\x20→\x20add\x20bg)','category':'ai','usage':'.changebg\x20<background\x20prompt>\x20(reply\x20image)','execute':async(_0x31e669,_0x25c5b7,{args:_0x31d82d,reply:_0x175b58,prefix:_0x421ba1})=>{const _0x14cfd9=a0_0x36a6c3;try{if(!_0x25c5b7[_0x14cfd9(0x186)])return _0x175b58(_0x14cfd9(0x179)+_0x421ba1+'changebg\x20beach');const _0x165e52=_0x31d82d[_0x14cfd9(0x180)]('\x20')[_0x14cfd9(0x170)]();if(!_0x165e52)return _0x175b58(_0x14cfd9(0x183)+_0x421ba1+_0x14cfd9(0x16b));const _0x535c20=_0x25c5b7['quoted'];if(!/image|webp/[_0x14cfd9(0x159)](_0x535c20['mimetype']||''))return _0x175b58('✘\x20Reply\x20must\x20be\x20an\x20image');await _0x175b58(_0x14cfd9(0x184));const _0x2cd97e=await _0x535c20['download'](),_0x56b2ce=new FormData();_0x56b2ce[_0x14cfd9(0x185)](_0x14cfd9(0x162),_0x2cd97e,{'filename':_0x14cfd9(0x15e),'contentType':_0x14cfd9(0x165)}),_0x56b2ce[_0x14cfd9(0x185)]('size',_0x14cfd9(0x17d));const _0x176a0b=await axios[_0x14cfd9(0x177)]('https://api.remove.bg/v1.0/removebg',_0x56b2ce,{'headers':{..._0x56b2ce[_0x14cfd9(0x16a)](),'X-Api-Key':'wPFjD5dk6JXo6P5UoxtH6dJW'},'responseType':_0x14cfd9(0x160),'timeout':0x7530}),_0x2ea9c4=Buffer[_0x14cfd9(0x166)](_0x176a0b[_0x14cfd9(0x16d)]);if(!_0x2ea9c4||_0x2ea9c4['length']<0x64)return _0x175b58('✘\x20Background\x20removal\x20failed');const _0x2e6998=new FormData();_0x2e6998['append']('image',_0x2ea9c4,{'filename':_0x14cfd9(0x161)}),_0x2e6998[_0x14cfd9(0x185)]('param',_0x165e52);const _0x5344e4=await axios[_0x14cfd9(0x177)](_0x14cfd9(0x172),_0x2e6998,{'headers':{..._0x2e6998[_0x14cfd9(0x16a)]()},'responseType':'arraybuffer','timeout':0x2bf20});if(!_0x5344e4?.['data'])return _0x175b58(_0x14cfd9(0x15c));const _0x1ed745=Buffer['from'](_0x5344e4['data']);if(!_0x1ed745[_0x14cfd9(0x163)])return _0x175b58(_0x14cfd9(0x168));if(_0x1ed745[_0x14cfd9(0x163)]>0x5*0x400*0x400)return _0x175b58(_0x14cfd9(0x173));await _0x31e669['sendMessage'](_0x25c5b7['chat'],{'image':_0x1ed745,'caption':_0x14cfd9(0x167)+(_0x14cfd9(0x17a)+_0x165e52+'>')},{'quoted':_0x25c5b7});}catch(_0x5865d8){console['error'](_0x14cfd9(0x174),_0x5865d8);if(_0x5865d8['response']?.[_0x14cfd9(0x17b)]===0x192)return _0x175b58(_0x14cfd9(0x169));if(_0x5865d8[_0x14cfd9(0x17c)]?.[_0x14cfd9(0x17b)]===0x191)return _0x175b58(_0x14cfd9(0x15d));if(_0x5865d8[_0x14cfd9(0x175)]==='ECONNABORTED')return _0x175b58(_0x14cfd9(0x176));_0x175b58(_0x14cfd9(0x171)+_0x5865d8[_0x14cfd9(0x17e)]);}}};
+
+const axios = require('axios');
+const FormData = require('form-data');
+
+module.exports = {
+    name: 'newbg',
+    alias: ['addbg'],
+    desc: 'Smart AI background changer (remove bg → add bg)',
+    category: 'ai',
+    usage: '.changebg <background prompt> (reply image)',
+
+    execute: async (sock, m, { args, reply, prefix }) => {
+        try {
+            if (!m.quoted) return reply(`✘ 𝙍𝞢𝙋𝙇𝙔 𝙏𝞗 𝘼𝙉 𝙄𝙈𝘼𝙂𝞢\n𝞢𝙓𝘼𝙈𝙋𝙇𝞢: ${prefix}changebg beach`);
+
+            const prompt = args.join(' ').trim();
+            if (!prompt) return reply(`✘ 𝙋𝙍𝞗𝙑𝙄𝘿𝞢 𝘽𝘼𝘾𝙆𝙂𝙍𝞗𝙐𝙉𝘿 𝘿𝞢𝙎𝘾𝙍𝙄𝙋𝙏𝙄𝞗𝙉\n𝞢𝙓𝘼𝙈𝙋𝙇𝞢: ${prefix}changebg beach sunset`);
+
+            if (!/image|webp/.test(m.quoted.mimetype || '')) return reply('✘ 𝙍𝞢𝙋𝙇𝙔 𝙈𝞐𝙎𝙏 𝘽𝞢 𝘼𝙉 𝙄𝙈𝘼𝙂𝞢');
+
+            await reply('✦ 𝙋𝙍𝞗𝘾𝞢𝙎𝙎𝙄𝙉𝙂 𝙄𝙈𝘼𝙂𝞢, 𝙋𝙇𝞢𝘼𝙎𝞢 𝙒𝘼𝙄𝙏...');
+
+            const imageBuffer = await m.quoted.download();
+            const removeBgForm = new FormData();
+            removeBgForm.append('image_file', imageBuffer, { filename: 'image.jpg', contentType: 'image/jpeg' });
+            removeBgForm.append('size', 'auto');
+
+            const removeBgRes = await axios.post('https://api.remove.bg/v1.0/removebg', removeBgForm, {
+                headers: {
+                    ...removeBgForm.getHeaders(),
+                    'X-Api-Key': 'wPFjD5dk6JXo6P5UoxtH6dJW'
+                },
+                responseType: 'arraybuffer',
+                timeout: 30000 
+            });
+
+            const transparentImage = Buffer.from(removeBgRes.data);
+            if (!transparentImage || transparentImage.length < 100) return reply('✘ 𝘽𝘼𝘾𝙆𝙂𝙍𝞗𝙐𝙉𝘿 𝙍𝞢𝙈𝞗𝙑𝘼𝙇 𝙁𝘼𝙄𝙇𝞢𝘿');
+
+            const addBgForm = new FormData();
+            addBgForm.append('image', transparentImage, { filename: 'transparent.png' });
+            addBgForm.append('param', prompt);
+
+            const aiRes = await axios.post('https://api.nexray.web.id/ai/gptimage', addBgForm, {
+                headers: { ...addBgForm.getHeaders() },
+                responseType: 'arraybuffer',
+                timeout: 180000 
+            });
+
+            if (!aiRes?.data) return reply('✘ 𝘼𝙄 𝘽𝘼𝘾𝙆𝙂𝙍𝞗𝙐𝙉𝘿 𝙂𝞢𝙉𝞢𝙍𝘼𝙏𝙄𝞗𝙉 𝙁𝘼𝙄𝙇𝞢𝘿');
+
+            const finalBuffer = Buffer.from(aiRes.data);
+            if (!finalBuffer.length) return reply('✘ 𝞢𝙈𝙋𝙏𝙔 𝘼𝙄 𝙍𝞢𝙎𝞐𝙇𝙏');
+            
+            if (finalBuffer.length > 5 * 1024 * 1024) return reply('✘ 𝙍𝞢𝙎𝞐𝙇𝙏 𝞢𝙓𝘾𝞢𝞢𝘿𝙎 𝙒𝙃𝘼𝙏𝙎𝘼𝙋𝙋 𝟱𝙈𝘽 𝙇𝙄𝙈𝙄𝙏');
+
+            let caption = `✦ 𝘾𝞗𝘿𝞢𝙓 𝘼𝙄 - 𝘽𝙂 𝘾𝙃𝘼𝙉𝙂𝞢𝙍\n\n`;
+            caption += `✓ 𝘽𝘼𝘾𝙆𝙂𝙍𝞗𝙐𝙉𝘿 𝘾𝙃𝘼𝙉𝙂𝞢𝘿 𝙎𝞐𝘾𝘾𝞢𝙎𝙎𝙁𝞐𝙇𝙇𝙔\n\n`;
+            caption += `✦ 𝙋𝙍𝞗𝙈𝙋𝙏: < ${prompt.toUpperCase()} >\n\n`;
+            caption += `✨ _𝙂𝞢𝙉𝞢𝙍𝘼𝙏𝞢𝘿 𝘽𝙔 𝘾𝞗𝘿𝞢𝙓 𝘼𝙄_`;
+
+            await sock.sendMessage(m.chat, { image: finalBuffer, caption: caption }, { quoted: m });
+
+        } catch (err) {
+            console.error('[CHANGE BG ERROR]', err);
+            
+            if (err.response?.status === 402) return reply('✘ 𝙍𝞢𝙈𝞗𝙑𝞢.𝘽𝙂 𝘾𝙍𝞢𝘿𝙄𝙏𝙎 𝞢𝙓𝙃𝘼𝞐𝙎𝙏𝞢𝘿');
+            if (err.response?.status === 401) return reply('✘ 𝙄𝙉𝙑𝘼𝙇𝙄𝘿 𝙍𝞢𝙈𝞗𝙑𝞢.𝘽𝙂 𝘼𝙋𝙄 𝙆𝞢𝙔');
+            if (err.code === 'ECONNABORTED') return reply('✘ 𝙋𝙍𝞗𝘾𝞢𝙎𝙎𝙄𝙉𝙂 𝙏𝙄𝙈𝞢𝞗𝞐𝙏');
+            
+            reply(`✘ 𝞢𝙍𝙍𝞗𝙍: ${err.message}`);
+        }
+    }
+};
+
+
