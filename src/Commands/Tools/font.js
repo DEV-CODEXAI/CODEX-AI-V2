@@ -1,4 +1,4 @@
-// ── CRYSNOVA AI V3 FONTS PLUGIN ──
+// ── CODEX AI V2 FONTS PLUGIN ──
 // 100+ Unicode fonts for stylish text
 
 const fs = require('fs');
@@ -269,7 +269,7 @@ function listFonts(page = 1) {
     const total = Object.keys(fonts).length;
     const totalPages = Math.ceil(total / perPage);
     
-    let text = `📝 *CRYSNOVA FONTS*\n_Total: ${total} fonts_\n_Page ${page}/${totalPages}_\n\n`;
+    let text = `📝 *CODEX FONTS*\n_Total: ${total} fonts_\n_Page ${page}/${totalPages}_\n\n`;
     
     const start = (page - 1) * perPage + 1;
     const end = Math.min(page * perPage, total);
@@ -307,9 +307,9 @@ module.exports = {
                 const current = botFontSettings[chatId];
                 if (current) {
                     const font = fonts[current];
-                    return reply(`⚉ Current bot font: *${font?.name || 'None'}*\n\nUse \`${prefix}botfont <name or number>\` to change\nUse \`${prefix}botfont off\` to disable`);
+                    return reply(`🥏 Current bot font: *${font?.name || 'None'}*\n\nUse \`${prefix}botfont <name or number>\` to change\nUse \`${prefix}botfont off\` to disable`);
                 }
-                return reply(`⚉ No bot font set\n\nUse \`${prefix}botfont <name or number>\` to set one`);
+                return reply(`🥏 No bot font set\n\nUse \`${prefix}botfont <name or number>\` to set one`);
             }
 
             // Turn off bot font
@@ -330,7 +330,7 @@ module.exports = {
             saveSettings();
 
             const sample = convertText('CRYSNOVA AI', font.id);
-            return reply(`✓ *Bot font set to: ${font.name}*\n\nSample: ${sample}\n\n_*All bot replies will now use this font in this chat!*_`);
+            return reply(`✓ *Bot font set to: ${font.name}*\n\nSample: ${sample}\n\n_*Codex will now reply to your cmds with this font in this chat!*_`);
         }
 
         // ── CONVERT TEXT ──
@@ -343,9 +343,9 @@ module.exports = {
 ${prefix}font <name or number> <text>
 
 *Examples:*
-${prefix}font 1 Hello World ⚉
-${prefix}font script Hello World ⚉
-${prefix}font double-struck Hello World ⚉
+${prefix}font 1 Hello World 🥏
+${prefix}font script Hello World 🥏
+${prefix}font double-struck Hello World 🥏
 
 *Tip:* Use \`${prefix}allfonts\` to see all fonts`
                 );
@@ -367,9 +367,9 @@ ${prefix}font double-struck Hello World ⚉
                 contextInfo: {
                     externalAdReply: {
                         title: `Font: ${font.name}`,
-                        body: 'CRYSNOVA Font Converter',
+                        body: 'CODEX Font Converter',
                         thumbnailUrl: "https://cdn-icons-png.flaticon.com/512/2912/2912780.png",
-                        sourceUrl: "https://github.com/crysnovax",
+                        sourceUrl: "https://github.com/DEV-CODEXAI/CODEX-AI-V2",
                         mediaType: 1
                     }
                 }
