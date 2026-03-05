@@ -1,4 +1,4 @@
-// ── CRYSNOVA AI V2 PLUGIN MANAGER WITH SORTER & AUTO-LOAD ──
+// ── CODEX AI V2 PLUGIN MANAGER WITH SORTER & AUTO-LOAD ──
 const fs = require('fs');
 const path = require('path');
 const axios = require('axios');
