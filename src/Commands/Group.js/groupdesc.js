@@ -8,24 +8,24 @@ module.exports = {
     execute: async (sock, m, { args, reply }) => {
 
         if (!m.isGroup)
-            return reply('𓉤 ⚉ Group only');
+            return reply('𓉤 🥏 Group only');
 
         const newDesc = args.join(' ').trim();
 
         if (!newDesc)
-            return reply('𓄄 ⚉ Provide new description\n✪ `.setdesc New group desc`');
+            return reply('🪄🥏 Provide new description\n🥏 `.setdesc New group desc`');
 
         try {
 
             await sock.groupUpdateSubject(m.chat, newDesc);
 
-            await reply('✓ ✪ Group description updated');
+            await reply('✓ 🥏 Group description updated');
 
         } catch (err) {
 
             console.error('[SETDESC ERROR]', err?.message || err);
 
-            let msg = '✘ ⚉ Failed to set description\n\n';
+            let msg = '✘ 🥏 Failed to set description\n\n';
 
             if (err.message?.includes('admin') || err.message?.includes('permission')) {
                 msg += '𓉤 Bot lacks admin permission';
