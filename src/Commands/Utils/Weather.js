@@ -53,7 +53,7 @@ module.exports = {
             const { data } = await axios.get(url);
             const emoji = getWeatherEmoji(data.weather[0].main);
 
-            const weatherText = `╔═══〔 ❍ 𝙒𝞢𝘼𝙏𝙃𝞢𝙍 𝙍𝞢𝙎𝙐𝙇𝙏 ❍ 〕═❒
+            const weatherText = `╔═══〔 ❍ 𝙒𝞢𝘼𝙏𝙃𝞢𝙍 𝙍𝞢𝙎𝙐𝙇𝙏 ❍ ❒
 ║╭───────────────◆
 ║│ 📍 𝙇𝙤𝙘𝙖𝙩𝙞𝙤𝙣: ${data.name}, ${data.sys.country}
 ║│ ${emoji} 𝙎𝙩𝙖𝙩𝙪𝙨: ${data.weather[0].description}
