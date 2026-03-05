@@ -8,7 +8,7 @@ module.exports = {
     execute: async (sock, m, { args, reply }) => {
 
         if (!m.isGroup)
-            return reply('𓉤 ⚉ This command works only in groups');
+            return reply('𓉤 🥏 This command works only in group chats');
 
         let target;
 
@@ -17,10 +17,10 @@ module.exports = {
         } else if (args[0]) {
             const number = args[0].replace(/[^0-9]/g, '');
             if (number.length < 10)
-                return reply('✘ ⚉ Invalid number format');
+                return reply('✘ 🥏 Invalid number format');
             target = number + '@s.whatsapp.net';
         } else {
-            return reply('𓄄 ⚉ Tag a user to demote\n✪ `.demote @user`');
+            return reply('🪄 🥏 Tag a user to demote\n✪ `.demote @user`');
         }
 
         try {
@@ -31,10 +31,10 @@ module.exports = {
 
             const demotedNumber = target.split('@')[0];
 
-            await reply('✓ ✪ `Demoted successfully`');
+            await reply('✓  `Demoted successfully`');
 
             await sock.sendMessage(m.chat, {
-                text: `✪ @${demotedNumber} is no longer admin`,
+                text: `🥏 @${demotedNumber} is no longer admin`,
                 mentions: [target]
             });
 
@@ -42,7 +42,7 @@ module.exports = {
 
             console.error('[DEMOTE ERROR]', err?.message || err);
 
-            let msg = '✘ ⚉ Failed to demote user\n\n';
+            let msg = '✘ Failed to demote user\n\n';
 
             if (err.message?.includes('admin') || err.message?.includes('permission')) {
                 msg += '𓉤 Bot lacks admin permission';
