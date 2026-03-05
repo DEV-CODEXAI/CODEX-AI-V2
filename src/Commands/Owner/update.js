@@ -107,7 +107,7 @@ module.exports = {
         };
 
         try {
-            await sendProgress('🔍 *CRYSNOVA AI Update System*\n\nChecking for updates...');
+            await sendProgress('🔍 *CODEX AI UPDATE SYSTEM*\n\nChecking for updates...');
 
             // ── STEP 1: GET REMOTE VERSION ──
             const versionUrl = `https://raw.githubusercontent.com/${CONFIG.repo}/${CONFIG.branch}/package.json`;
