@@ -55,7 +55,7 @@ module.exports = {
     ownerOnly: false,
 
     execute: async (sock, m, { args, reply }) => {
-        if (!m.isGroup) return reply('⚉ This command works only in groups');
+        if (!m.isGroup) return reply('🥏 This command works only in groups');
 
         const groupJid = m.chat;
         const cmd = m.body.toLowerCase().split(/\s+/)[0].slice(1);
@@ -68,7 +68,7 @@ module.exports = {
                 const match = timeArg?.match(/^(\d+)(s|m|h|d|w)$/i);
 
                 if (!match) {
-                    return reply('⚉ _*Use:*_ `.mute for 10m | 2h | 1d | 10s | 2w` 𓄄');
+                    return reply('🥏 _*Use:*_ `.mute for 15m | 2h | 1d | 10s | 2w` 🥏');
                 }
 
                 const amount = parseInt(match[1]);
@@ -85,7 +85,7 @@ module.exports = {
                 const duration = amount * multipliers[unit];
 
                 if (duration > 60 * 24 * 60 * 60 * 1000) {
-                    return reply('⚉ _*Maximum mute duration is 60 days*_𓄄');
+                    return reply('🥏 _*Maximum mute duration is 60 days*_🥏');
                 }
 
                 await sock.groupSettingUpdate(groupJid, 'announcement');
@@ -105,7 +105,7 @@ module.exports = {
 
             if (sub === 'sch') {
                 await reply(
-                    `🕒 *Mute Scheduler*\n\n` +
+                    `⏱️ *Mute Scheduler*\n\n` +
                     `Reply with:\n` +
                     `1. Time (e.g. 7pm)\n` +
                     `2. Duration (e.g. 8 hours)\n` +
@@ -123,7 +123,7 @@ module.exports = {
                 const repeat = args[4]?.toLowerCase() || 'daily';
 
                 if (!startTime || !endTime || toWord !== 'to') {
-                    return reply('⚉ Use: `.mute from 12pm to 5am daily` or `once`');
+                    return reply('🥏 Use: `.mute from 12pm to 5am daily` or `once`');
                 }
 
                 // Parse times to cron format (24h)
@@ -131,7 +131,7 @@ module.exports = {
                 const endCron = timeToCron(endTime);
 
                 if (!startCron || !endCron) {
-                    return reply('⚉ Invalid time format. Use: 12pm, 5am, 17:00, etc.');
+                    return reply('🥏 Invalid time format. Use: 12pm, 5am, 17:00, etc.');
                 }
 
                 const scheduleId = `${groupJid}-mute-${Date.now()}`;
@@ -161,7 +161,7 @@ module.exports = {
                 saveSchedules();
 
                 reply(
-                    `🕒 *Mute Schedule Set!*\n\n` +
+                    `⏱️ *Mute Schedule Set!*\n\n` +
                     `• Mute at: ${startTime} every day\n` +
                     `• Unmute at: ${endTime} every day\n` +
                     `• Repeat: ${repeat}\n\n` +
@@ -173,7 +173,7 @@ module.exports = {
 
             // Normal instant mute
             await sock.groupSettingUpdate(groupJid, 'announcement');
-            return reply('🔇 Group muted — only admins can send messages');
+            return reply('🔇 Group muted — only the group administrators can send messages');
         }
 
         // ── INSTANT UNMUTE ──────────────────────────────────────────
@@ -184,7 +184,7 @@ module.exports = {
             }
 
             await sock.groupSettingUpdate(groupJid, 'not_announcement');
-            return reply('🔊 Group unmuted — everyone can chat now');
+            return reply('🔊 Group unmuted — Everyone is now allowed to communicate in the group chat ');
         }
 
         // ── CANCEL SCHEDULE ─────────────────────────────────────────
@@ -195,7 +195,7 @@ module.exports = {
             return;
         }
 
-        reply('⚉ Invalid mute command\nUse: .mute | .unmute | .mute for <time> | .mute sch | .mute from <start> to <end> <daily/once> | .cancel schedule');
+        reply('🥏 Invalid mute command\nUse: .mute | .unmute | .mute for <time> | .mute sch | .mute from <start> to <end> <daily/once> | .cancel schedule');
     }
 };
 
