@@ -2,7 +2,7 @@ const axios = require("axios");
 
 module.exports = {
     name: "codex",
-    alias: ["cdx", "cdxai", "codexai"],
+    alias: ["codex", "codex", "codex"],
     category: "ai",
     desc: "GPT AI Assistant",
 
