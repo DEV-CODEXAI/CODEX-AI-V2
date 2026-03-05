@@ -13,7 +13,7 @@ module.exports = {
     category: 'Bot',
     reactions: {
         start: '♻️',
-        success: '✨'
+        success: '🪄'
     },
 
     execute: async (sock, m, { prefix, config, reply }) => {
@@ -21,7 +21,7 @@ module.exports = {
 
         await sock.sendPresenceUpdate('composing', m.key.remoteJid);
 
-        await sock.sendMessage(m.key.remoteJid, { text: '✪ _Pinging..._' }, { quoted: m });
+        await sock.sendMessage(m.key.remoteJid, { text: '🚀 _Pinging..._' }, { quoted: m });
 
         const latency = Date.now() - startTime;
         const now = new Date();
