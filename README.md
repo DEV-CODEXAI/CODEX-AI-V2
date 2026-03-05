@@ -47,7 +47,7 @@ Follow along with the tutorial series: Each episode introduces 1–2 new command
   <a href="https://github.com/DEV-CODEXAI/CODEX-AI-V2/fork"><img title="CODEX AI" src="https://img.shields.io/badge/FORK-CODEX AI-h?color=blue&style=for-the-badge&logo=stackshare"></a>
 
 ## 🧠 Editing Bot Files
-Need to tweak or customize? Download [MT Manager](https://t.me/codex) for easy file management.
+Need to modify or customize? Download [MT Manager](https://t.me/codex) for easy file management.
 
 ## 👨‍💻 Credits
 - **Base Project**: [CODEX](https://t.me/codex)
