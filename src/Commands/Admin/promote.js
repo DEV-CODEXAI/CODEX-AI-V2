@@ -8,7 +8,7 @@ module.exports = {
     execute: async (sock, m, { args, reply }) => {
 
         if (!m.isGroup)
-            return reply('𓉤 ⚉ This command works only in groups');
+            return reply(' This command works only in groups');
 
         let target;
 
@@ -17,10 +17,10 @@ module.exports = {
         } else if (args[0]) {
             const number = args[0].replace(/[^0-9]/g, '');
             if (number.length < 10)
-                return reply('✘ ⚉ Invalid number format');
+                return reply('✘ Invalid number format');
             target = number + '@s.whatsapp.net';
         } else {
-            return reply('𓄄 ⚉ Tag a user to promote\n✪ `.promote @user`');
+            return reply(' Tag a user to promote\n✪ `.promote @user`');
         }
 
         try {
@@ -31,10 +31,10 @@ module.exports = {
 
             const promotedNumber = target.split('@')[0];
 
-            await reply('✓ ✪ `Promoted successfully`');
+            await reply('✓  `Promoted successfully`');
 
             await sock.sendMessage(m.chat, {
-                text: `✪ @${promotedNumber} is now admin`,
+                text: ` @${promotedNumber} is now admin`,
                 mentions: [target]
             });
 
@@ -42,14 +42,14 @@ module.exports = {
 
             console.error('[PROMOTE ERROR]', err?.message || err);
 
-            let msg = '✘ ⚉ Failed to promote user\n\n';
+            let msg = '✘ Failed to promote user\n\n';
 
             if (err.message?.includes('admin') || err.message?.includes('permission')) {
-                msg += '𓉤 Bot lacks admin permission';
+                msg += ' Bot lacks admin permission';
             } else if (err.message?.includes('not-authorized')) {
-                msg += '𓉤 Cannot promote this user';
+                msg += ' Cannot promote this user';
             } else {
-                msg += `𓉤 <${err.message || 'Unknown error'}>`;
+                msg += ` <${err.message || 'Unknown error'}>`;
             }
 
             reply(msg);
