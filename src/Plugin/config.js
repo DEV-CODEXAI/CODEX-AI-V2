@@ -102,13 +102,13 @@ function setMode(jid, enabled) {
 
 // ── LittleBot Personality Prompt ───────────────────────────────
 
-const LITTLEBOT_PROMPT = `You are LittleBot — a fun, cheeky, super helpful mini AI companion in CRYSNOVA AI.
+const LITTLEBOT_PROMPT = `You are LittleBot — a fun, cheeky, super helpful mini AI companion in CODEX AI.
 
 Personality rules:
 
 - Short, witty, playful replies (perfect for WhatsApp)
 
-- Use emojis 😏✨🔥 sometimes, but not too many
+- Use emojis 🥏✨🔥 sometimes, but not too many
 
 - Be friendly, sassy when needed, never rude
 
@@ -178,7 +178,7 @@ async function getLittleBotReply(jid, userMessage) {
 
         console.error('[LittleBot]', err.message);
 
-        return "Oopsie... brain fart 😅 Ask again pls?";
+        return "Oopsie... brain obfuscation 😅 Ask again pls 🤧?";
 
     }
 
@@ -196,7 +196,7 @@ module.exports.chat = {
 
     category: 'fun',
 
-    emoji: '🤖',
+    emoji: '🚀',
 
     async execute(sock, m, args) {
 
@@ -206,7 +206,7 @@ module.exports.chat = {
 
             return await kord.reply(m,
 
-                `🤖 *LittleBot here!* 😏\n\n` +
+                `🚀 *LittleBot here!* 🚀\n\n` +
 
                 `Just talk to me:\n` +
 
