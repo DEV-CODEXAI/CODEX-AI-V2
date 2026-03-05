@@ -1,4 +1,5 @@
-// © 2026 CRYSNOVA AI V2.0 - All Rights Reserved.
+
+// © 2026 CODEX AI V2.0 - All Rights Reserved.
 
 const fs = require('fs');
 const path = './database/groupEvents.json';
@@ -8,11 +9,11 @@ if (!fs.existsSync(path)) fs.writeFileSync(path, JSON.stringify({}));
 module.exports = {
     name: 'events',
     alias: [],
-    desc: '⚉ Toggle Group Events System ⚉',
+    desc: '🥏 Toggle Group Events System 🥏',
     category: 'group',
     group: true,
-    admin: true, // Only group admins can use
-    owner: true, // Not restricted to bot owner
+    admin: true, 
+    owner: true, 
 
     execute: async (sock, m, { reply }) => {
         try {
@@ -23,40 +24,44 @@ module.exports = {
             if (!db[m.chat]) db[m.chat] = { enabled: false, welcome: null, goodbye: null };
 
             if (!option) {
-                return await reply(
-`⚉ *GROUP EVENTS SYSTEM* ⚉
+                let eventText = `╔═══〔 ❍ GROUP EVENTS ❍ 〕═❒\n`;
+                eventText += `║╭───────────────◆\n`;
+                eventText += `║│ ❍ USAGE:\n`;
+                eventText += `║│ .events on | .events off\n`;
+                eventText += `║│\n`;
+                eventText += `║│ ❍ FEATURES:\n`;
+                eventText += `║│ • Premium Welcome Card\n`;
+                eventText += `║│ • Goodbye Messages\n`;
+                eventText += `║│ • Editable Welcome Text\n`;
+                eventText += `║│ • Member Count Display\n`;
+                eventText += `║│ • Join Time Display\n`;
+                eventText += `║│ • @User Tagging\n`;
+                eventText += `║│ • Online Tracker (Future)\n`;
+                eventText += `║╰───────────────◆\n`;
+                eventText += `╚══════════════════❒\n`;
+                eventText += ` ╰─ 🥏 \`\`\`CODEX AI\`\`\``;
 
-Usage:  
-.events on  
-.events off
-
-Available Features:  
-• Premium Welcome Card  
-• Goodbye Messages  
-• Editable Welcome Text  
-• Member Count Display  
-• Join Time Display  
-• @User Tagging  
-• Future: Online Tracker`
-                );
+                return await reply(eventText);
             }
 
             if (option === 'on') {
                 db[m.chat].enabled = true;
                 fs.writeFileSync(path, JSON.stringify(db, null, 2));
-                return await reply('✓ *Group Events Enabled Successfully!*𓄄');
+                return await reply('✓ *Group Events Enabled Successfully!*🥏');
             }
 
             if (option === 'off') {
                 db[m.chat].enabled = false;
                 fs.writeFileSync(path, JSON.stringify(db, null, 2));
-                return await reply('✘ *Group Events Disabled!*⚉𓄄');
+                return await reply('✘ *Group Events Disabled!*🥏');
             }
 
             return await reply('✘ *Invalid option!* Use "on" or "off"𓄄');
         } catch (e) {
             console.error('Events Plugin Error:', e);
-            return await reply('✘ *Something went wrong!*⚉𓄄');
+            return await reply('✘ *Something went wrong!*🥏');
         }
     }
 };
+
+
