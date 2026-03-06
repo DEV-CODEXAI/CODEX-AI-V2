@@ -23,7 +23,7 @@ module.exports = {
 ║│ 🥏 𝘽𝙤𝙩: *${botName}*
 ║│ ✯ 𝙋𝙧𝙚𝙛𝙞𝙭: *${currentPrefix}*
 ║│ 🚀 𝙎𝙩𝙖𝙩𝙪𝙨: ✓ 𝞗𝙣𝙡𝙞𝙣𝙚 
-║| 💨 𝙉𝙪𝙢𝙗𝙚𝙧: ${botNumber}
+║| 💨 𝙉𝙪𝙢𝙗𝙚𝙧: *Default bot number*
 ║│ 💫 *CODEX*:  *ACTIVE*✓✓
 ║│ 🪄 𝘾𝙤𝙢𝙢𝙖𝙣𝙙: *${currentPrefix}𝙘𝙧𝙚𝙖𝙩𝙤𝙧*
 ║│ ✦ 𝙏𝙧𝙞𝙜𝙜𝙚𝙧𝙚𝙙 𝙗𝙮: ${triggerUser}
