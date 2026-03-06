@@ -23,7 +23,7 @@ module.exports = {
 .translate <lang> (reply to message)
 
 Example:
-.tr es Hello
+.tr es codex
 .tr id (reply message)`)
             }
 
