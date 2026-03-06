@@ -64,7 +64,7 @@ module.exports = {
                 fileName: `${appName}.apk`,
                 caption:
                     
-`╔═══❍ *APK DOWNLOADER*❍═❒\n` +
+`╔═❍*APK DOWNLOADER*❍═❒\n` +
 `║╭───────────────◆\n` +
 `║│ ❍ *APP:* ${appName}\n` +
 `║╰───────────────◆\n` +
