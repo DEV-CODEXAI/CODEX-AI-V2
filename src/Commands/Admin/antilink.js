@@ -43,7 +43,7 @@ module.exports = {
 
         if (!cmd) {
             const status = db[group].enabled ? "ON" : "OFF";
-            return reply(`🥏 AntiLink Status: ${status}\n\nUse .antilink on/off`);
+            return reply(`✪ AntiLink Status: ${status}\n\nUse .antilink on/off`);
         }
 
         if (cmd === 'on') {
@@ -93,7 +93,7 @@ module.exports.handleAntiLink = async function(sock, m) {
         await sock.sendMessage(group, { delete: m.key });
 
         await sock.sendMessage(group, {
-            text: `🥏 *Link detected*!\n@${sender.split('@')[0]}_*Links are highly prohibited here*_`,
+            text: `🚫 *Link detected*!\n@${sender.split('@')[0]}_*Links are highly prohibited here*_`,
             mentions: [sender]
         });
 
