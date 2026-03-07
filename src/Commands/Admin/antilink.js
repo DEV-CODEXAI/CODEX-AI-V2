@@ -43,13 +43,13 @@ module.exports = {
 
         if (!cmd) {
             const status = db[group].enabled ? "ON" : "OFF";
-            return reply(`✪ AntiLink Status: ${status}\n\nUse .antilink on/off`);
+            return reply(`💨 AntiLink Status: ${status}\n\nUse .antilink on/off`);
         }
 
         if (cmd === 'on') {
             db[group].enabled = true;
             saveDB(db);
-            return reply('亗 `AntiLink Enabled`');
+            return reply('💨 `AntiLink Enabled`');
         }
 
         if (cmd === 'off') {
