@@ -242,7 +242,7 @@ mentions:[targetJid]
 await sock.sendMessage(chatId,{
 text:
 `_*🚫 USER MUTED*_\n\n`+
-`✦ *Target": @${targetJid.split('@')[0]}\n`+
+`✦ *Target*: @${targetJid.split('@')[0]}\n`+
 `💨 *Reason*: ${reason}\n`+
 `⏱️ *Duration*: ${formatTime(timeMs)}`,
 
