@@ -17,7 +17,7 @@ module.exports = {
         }
 
         try {
-            await reply('✪ _*Downloading...*_');
+            await reply('💨 _*Downloading...*_');
 
             const response = await axios.get(url, { responseType: 'arraybuffer', timeout: 60000, headers: { 'User-Agent': 'Mozilla/5.0' } });
             const buffer = Buffer.from(response.data);
@@ -37,7 +37,7 @@ module.exports = {
                 [sendKey]: buffer,
                 mimetype: mimeType || 'application/octet-stream',
                 fileName,
-                caption: `Downloaded from: ${url.split('?')[0]}\nvia CRYSNOVA`
+                caption: `Downloaded from: ${url.split('?')[0]}\nvia CODEX`
             }, { quoted: m });
 
         } catch (err) {
