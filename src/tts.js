@@ -11,13 +11,13 @@ module.exports = {
     execute: async (sock, m, { reply, args, quoted }) => {
         
         const text = args.join(' ') || quoted?.text
-        if (!text) return reply(` Provide text to convert to speech
+        if (!text) return reply(`🥏 Provide text to convert to speech
 
 Examples:
-.tts I Love Codex Ai
+.tts Hello world
 .tts (reply to message)
 
- Languages: en, es, fr, de, id, ja, ko, ar`)
+💨 Languages: en, es, fr, de, id, ja, ko, ar`)
         
         const lang = args[0]?.length === 2 ? args.shift() : 'en'
         const finalText = args.join(' ') || text
@@ -31,7 +31,7 @@ Examples:
         const outputPath = path.join(tempDir, `tts_${Date.now()}.mp3`)
 
         try {
-            reply('🪄 Generating speech please wait...')
+            reply('𓄄 Generating speech...')
             
             // Method 1: gTTS (if installed)
             try {
@@ -71,4 +71,4 @@ Examples:
             if (fs.existsSync(outputPath)) fs.unlinkSync(outputPath)
         }
     }
-                      }
+}
