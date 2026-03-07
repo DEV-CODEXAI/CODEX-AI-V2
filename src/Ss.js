@@ -12,7 +12,7 @@ module.exports = {
             let url = args[0]
 
             if (!url)
-                return reply('🥏 Provide a URL\nExample: .ss https://google.com')
+                return reply('💨 Provide a URL\nExample: .ss https://google.com')
 
             if (!url.match(/^https?:\/\//))
                 url = 'https://' + url
@@ -94,7 +94,7 @@ module.exports = {
                     html.match(/name=["']description["'][^>]*content=["'](.*?)["']/i)?.[1] ||
                     "No description"
 
-                reply(`🥏 *WEBSITE PREVIEW*\n\n🪄 URL: ${url}\n Title: ${title}\n𓄄 Description: ${desc.substring(0, 180)}...`)
+                reply(` *WEBSITE PREVIEW*\n\n URL: ${url}\n Title: ${title}\n Description: ${desc.substring(0, 180)}...`)
 
             } catch {
                 reply('✘ _*Screenshot failed. Site may restrict bots.*_')
@@ -105,4 +105,4 @@ module.exports = {
             reply('✘ Screenshot error')
         }
     }
-                          }
+            }
