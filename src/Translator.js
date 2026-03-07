@@ -18,7 +18,7 @@ module.exports = {
             }
 
             if (!text) {
-                return reply(` Usage:
+                return reply(`🪄 Usage:
 .translate <lang> <text>
 .translate <lang> (reply to message)
 
@@ -56,13 +56,13 @@ Example:
                 const detectedLang = data?.[2] || 'auto'
 
                 return reply(
-                    ` *TRANSLATED*\n\n` +
-                    ` *From*: ${detectedLang.toUpperCase()}\n` +
-                    ` *To*: ${lang.toUpperCase()}\n` +
-                    ` *Original*: ${text.substring(0, 120)}\n\n` +
+                    `👌 *TRANSLATED*\n\n` +
+                    `🚀 From: ${detectedLang.toUpperCase()}\n` +
+                    `💨 To: ${lang.toUpperCase()}\n` +
+                    `🥏 Original: ${text.substring(0, 120)}\n\n` +
                     `\n` +
-                    ` *Result*: ${translated}\n\n` +
-                    `🪄 Powered by Codex Google Translate`
+                    `🪄 Result: ${translated}\n\n` +
+                    `💨 Powered by Google Translate`
                 )
 
             } catch {
@@ -84,10 +84,10 @@ Example:
                 if (data?.responseStatus === 200) {
 
                     return reply(
-                        ` *TRANSLATED*\n\n` +
-                        ` *From*: ${data.responseData.detectedLanguage || 'auto'}\n` +
-                        ` *To*: ${lang.toUpperCase()}\n` +
-                        ` *Result*: ${data.responseData.translatedText}`
+                        `🚀 *TRANSLATED*\n\n` +
+                        `👌 From: ${data.responseData.detectedLanguage || 'auto'}\n` +
+                        `💨 To: ${lang.toUpperCase()}\n` +
+                        `🥏 Result: ${data.responseData.translatedText}`
                     )
 
                 }
@@ -100,4 +100,4 @@ Example:
             reply('✘ Translation failed')
         }
     }
-                          }
+}
