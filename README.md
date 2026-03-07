@@ -231,7 +231,7 @@ async function setupOwnerNumber() {
     console.log('');
     
     // Ask for owner name
-    showInputPrompt('2', 'OWNER NAME', 'John');
+    showInputPrompt('2', 'OWNER NAME', 'CODEX');
     let ownerName = await ask(c('   Enter: ', 'yellow'));
     
     // Use default if empty
@@ -244,7 +244,7 @@ async function setupOwnerNumber() {
     console.log('');
     
     // Ask for bot name
-    showInputPrompt('3', 'BOT NAME', 'My Awesome Bot');
+    showInputPrompt('3', 'BOT NAME', 'CODEX AI');
     let botName = await ask(c('   Enter: ', 'yellow'));
     
     // Use default if empty
