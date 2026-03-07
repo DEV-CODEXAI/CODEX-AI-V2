@@ -179,7 +179,7 @@ module.exports = {
            return reply('✘ _*Cannot sticker-mute admin*_');
        
        if (isTargetAdmin && !isAdmin)
-           return reply('✘ _*Only admins are allowed to use the command*_');
+           return reply('✘ _*Only admins can sticker-mute admins*_');
        
        /* ================= TIME ================= */
        
@@ -238,7 +238,7 @@ module.exports = {
            text:
                `_*🚫 STICKER MUTE*_\n\n` +
                `✦ *Target*: @${targetJid.split('@')[0]}\n` +
-               `⚉ *Reason*: ${reason}\n` +
+               `💨 *Reason*: ${reason}\n` +
                `⏱️ *Duration*: ${formatTime(timeMs)}`,
            
            mentions: [targetJid]
