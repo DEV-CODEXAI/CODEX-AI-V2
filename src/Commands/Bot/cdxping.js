@@ -3,7 +3,7 @@ const os = require('os');
 
 module.exports = {
   name: 'cdxping',
-  alias: ['speed'],
+  alias: ['cdxspeed'],
   desc: 'Show bot latency with a hacker interface',
   category: 'bot',
   execute: async (sock, m, { reply }) => {
