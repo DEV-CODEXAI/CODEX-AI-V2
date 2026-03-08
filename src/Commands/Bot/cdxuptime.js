@@ -3,7 +3,7 @@ const os = require('os');
 
 module.exports = {
   name: 'cdxuptime',
-  alias: ['runtime', 'up'],
+  alias: ['cdxruntime', 'cdxup'],
   desc: 'Show how long the bot has been active',
   category: 'bot',
   execute: async (sock, m, { reply }) => {
