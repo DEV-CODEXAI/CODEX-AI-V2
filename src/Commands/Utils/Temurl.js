@@ -10,15 +10,15 @@ module.exports = {
     execute: async (sock, m, { reply }) => {
 
         if (!m.quoted)
-            return reply('𓉤 ⚉ Reply to an image');
+            return reply('🥏 Reply to an image');
 
         const mtype = m.quoted.mtype || '';
 
         if (!mtype.includes('image'))
-            return reply('⚉ Reply to an image');
+            return reply('🥏 Reply to an image');
 
         try {
-            await reply('_✪ Uploading image..._');
+            await reply('_💨 Uploading image..._');
 
             const buffer = await m.quoted.download();
             if (!buffer) return reply('✘ Download failed');
@@ -46,7 +46,7 @@ module.exports = {
                 return reply(`✘ Upload failed\n${url || 'Unknown error'}`);
             }
 
-            reply(`✓ ✪ \`Uploaded Successfully\`\n\n𓄄 ⚉ ${url}`);
+            reply(`✓ \`Uploaded Successfully\`\n\n🥏 ${url}`);
 
         } catch (err) {
             console.log(err.message || err);
