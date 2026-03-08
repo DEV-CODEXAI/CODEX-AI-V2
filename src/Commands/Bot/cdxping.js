@@ -1,4 +1,3 @@
-
 const { createCanvas } = require('canvas');
 const os = require('os');
 
@@ -9,11 +8,15 @@ module.exports = {
   category: 'bot',
   execute: async (sock, m, { reply }) => {
     const ping = Date.now() - m.messageTimestamp * 1000;
-    const currentTime = new Date();
-    const hoursTime = currentTime.getHours().toString().padStart(2, '0');
-    const minutesTime = currentTime.getMinutes().toString().padStart(2, '0');
-    const secondsTime = currentTime.getSeconds().toString().padStart(2, '0');
-    const day = currentTime.toLocaleString('en-US', { weekday: 'long' });
+    
+    // --- UPDATED TIME LOGIC FOR NIGERIA ---
+    const options = { timeZone: 'Africa/Lagos', hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' };
+    const dateOptions = { timeZone: 'Africa/Lagos', weekday: 'long' };
+    
+    const now = new Date();
+    const timeString = now.toLocaleTimeString('en-GB', options); // Returns "HH:MM:SS"
+    const day = now.toLocaleDateString('en-US', dateOptions);
+    // --------------------------------------
 
     // Canvas Dimensions
     const width = 600;
@@ -83,7 +86,7 @@ module.exports = {
     ctx.textAlign = 'center';
     ctx.fillStyle = '#00FFFF';
     ctx.font = 'bold 22px Courier New';
-    const timestamp = `${day.toUpperCase()} // ${hoursTime}:${minutesTime}:${secondsTime}`;
+    const timestamp = `${day.toUpperCase()} // ${timeString}`;
     ctx.fillText(timestamp, width / 2, 320);
 
     // 8. DATA DECORATION (Floating "bits")
@@ -101,12 +104,9 @@ module.exports = {
         image: buffer, 
         caption: `*─── [ 𝐂𝐎𝐃𝐄𝐗 𝐓𝐄𝐑𝐌𝐈𝐍𝐀𝐋 ] ───*\n\n` +
                  `*ʟᴀᴛᴇɴᴄʏ:* \`${ping}ms\`\n` +
-                 `*ᴛ𝐢𝐦𝐞:* \`${hoursTime}:${minutesTime}:${secondsTime}\`\n` +
+                 `*ᴛ𝐢𝐦𝐞:* \`${timeString}\`\n` +
                  `*ᴅᴀʏ:* \`${day}\`\n\n` +
                  `*ꜱᴛᴀᴛᴜꜱ:* \`SYSTEM_OPTIMIZED\`` 
     }, { quoted: m });
   }
 };
-
-
-      
