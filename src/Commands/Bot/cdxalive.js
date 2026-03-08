@@ -2,8 +2,8 @@ const { createCanvas } = require('canvas');
 const os = require('os');
 
 module.exports = {
-  name: 'alive',
-  alias: ['online', 'info'],
+  name: 'cdxalive',
+  alias: ['cdxonline', 'cdxinfo'],
   desc: 'Check if the bot is active with a high-tech interface',
   category: 'bot',
   execute: async (sock, m, { reply }) => {
@@ -51,7 +51,7 @@ module.exports = {
     ctx.fillStyle = '#00FFFF';
     ctx.font = 'bold 28px Courier New';
     ctx.textAlign = 'center';
-    ctx.fillText('<  >', width / 2, 70);
+    ctx.fillText('< 𝐂 𝐎 𝐃 𝐄 𝐗  𝐀 𝐈 >', width / 2, 70);
 
     // 8. MAIN "ALIVE" DISPLAY
     ctx.shadowBlur = 20;
