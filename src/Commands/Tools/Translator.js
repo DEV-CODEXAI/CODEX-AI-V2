@@ -1,103 +1,58 @@
-const axios = require('axios')
+const axios = require('axios');
 
 module.exports = {
-    name: 'translate',
-    alias: ['tr', 'trans', 'tl'],
-    category: 'WhatsApp',
+  name: 'translate',
+  alias: ['trt', 'trans'],
+  category: 'tools',
+  desc: 'Translate text to any language',
+  execute: async (sock, m, { args, reply, prefix }) => {
+    try {
+      // 1. INPUT EXTRACTION
+      let text = args.join(" ");
+      let targetLang = 'en'; // Default to English
 
-    execute: async (sock, m, { reply, args, quoted }) => {
+      // Check if first argument is a language code (e.g., .trt fr Hello)
+      if (args[0] && args[0].length <= 5 && /^[a-z]+$/i.test(args[0])) {
+        targetLang = args[0].toLowerCase();
+        text = args.slice(1).join(" ");
+      }
 
-        try {
+      // If no text in args, check quoted message
+      const content = text || (m.quoted ? (m.quoted.text || m.quoted.caption) : null);
 
-            let lang = args[0]?.toLowerCase() || 'en'
-            let text = args.slice(1).join(' ')
+      if (!content) {
+        return reply(`*𝐓𝐑𝐀𝐍𝐒𝐋𝐀𝐓𝐎𝐑*\n\n* USAGE:* ${prefix}translate [lang] [text]\n* EXAMPLE:* ${prefix}trt hello codex\n* INFO:* Translates quoted text or provided text.`);
+      }
 
-            // If replying to message
-            if (!text && quoted?.text) {
-                text = quoted.text
-            }
+      await sock.sendMessage(m.chat, { react: { text: "🌐", key: m.key } });
 
-            if (!text) {
-                return reply(`🪄 Usage:
-.translate <lang> <text>
-.translate <lang> (reply to message)
+      // 2. TRANSLATION ENGINE (Cloud API)
+      // Using a high-reliability translation aggregator
+      const apiUrl = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=${targetLang}&dt=t&q=${encodeURIComponent(content)}`;
 
-Example:
-.tr es codex
-.tr id (reply message)`)
-            }
+      const response = await axios.get(apiUrl);
+      
+      // Google's result structure: [[["translated_text", "original_text"...]]]
+      const translatedText = response.data[0].map(item => item[0]).join("");
+      const detectedLang = response.data[2];
 
-            // ===== Google Translate API =====
-            try {
+      // 3. FORMATTED OUTPUT
+      const output = 
+`*𝐓𝐑𝐀𝐍𝐒𝐋𝐀𝐓𝐎𝐑*
 
-                const res = await axios.get(
-                    `https://translate.googleapis.com/translate_a/single`,
-                    {
-                        params: {
-                            client: 'gtx',
-                            sl: 'auto',
-                            tl: lang,
-                            dt: 't',
-                            q: text
-                        },
-                        timeout: 10000
-                    }
-                )
+*𝐃𝐄𝐓𝐄𝐂𝐓𝐄𝐃*: *${detectedLang.toUpperCase()}*
+*𝐓𝐀𝐑𝐆𝐄𝐓*: *${targetLang.toUpperCase()}*
 
-                const data = res.data
+*📝 RESULT:*
+*${translatedText}*
 
-                if (!data || !data[0])
-                    throw new Error("Translation error")
+*TRANSLATED VIA CODEX AI*`;
 
-                const translated = data[0]
-                    .map(item => item[0])
-                    .join('')
+      return reply(output);
 
-                const detectedLang = data?.[2] || 'auto'
-
-                return reply(
-                    `👌 *TRANSLATED*\n\n` +
-                    `🚀 From: ${detectedLang.toUpperCase()}\n` +
-                    `💨 To: ${lang.toUpperCase()}\n` +
-                    `🥏 Original: ${text.substring(0, 120)}\n\n` +
-                    `\n` +
-                    `🪄 Result: ${translated}\n\n` +
-                    `💨 Powered by Google Translate`
-                )
-
-            } catch {
-
-                // ===== Fallback API =====
-                const fallback = await axios.get(
-                    `https://api.mymemory.translated.net/get`,
-                    {
-                        params: {
-                            q: text,
-                            langpair: `auto|${lang}`
-                        },
-                        timeout: 10000
-                    }
-                )
-
-                const data = fallback.data
-
-                if (data?.responseStatus === 200) {
-
-                    return reply(
-                        `🚀 *TRANSLATED*\n\n` +
-                        `👌 From: ${data.responseData.detectedLanguage || 'auto'}\n` +
-                        `💨 To: ${lang.toUpperCase()}\n` +
-                        `🥏 Result: ${data.responseData.translatedText}`
-                    )
-
-                }
-
-                reply('✘ Translation service busy')
-            }
-
-        } catch (err) {
-            console.log(err.message)
-            reply('✘ Translation failed')
-        }
+    } catch (err) {
+      console.error("Translate Error:", err);
+      return reply('*𝐂𝐎𝐃𝐄𝐗 𝐀𝐈*\n\n*✘ ERROR: TRANSLATION_FAILED*\n* LOG: CHECK LANGUAGE CODE AND TRY AGAIN*');
     }
-}
+  }
+};
