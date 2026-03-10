@@ -32,19 +32,19 @@ module.exports = {
             await delay(2000);
 
             await sock.sendMessage(jid, { 
-                text: `**INTERCEPTING SS7 GATEWAY...**\n**[ ███ ░ ░ ░ ░ ░ ░ ░ ░ ] 30%**`, 
+                text: `**INTERCEPTING SS7 GATEWAY VIA NET CRACK...**\n**[ ███ ░ ░ ░ ░ ░ ░ ░ ░ ] 30%**`, 
                 edit: key 
             });
             await delay(2000);
 
             await sock.sendMessage(jid, { 
-                text: `**BYPASSING END-TO-END ENCRYPTION...**\n**[ ████ ░ ░ ░ ░ ░ ░ ░ ] 40%**`, 
+                text: `**BYPASSING END-TO-END ENCRYPTION VIA CODEX LINUX BASE...**\n**[ ████ ░ ░ ░ ░ ░ ░ ░ ] 40%**`, 
                 edit: key 
             });
             await delay(2000);
 
             await sock.sendMessage(jid, { 
-                text: `**DECRYPTING SQLITE_DB MESSAGES...**\n**[ █████ ░ ░ ░ ░ ░ ░ ] 50%**`, 
+                text: `**DECRYPTING SQLITE_DB MESSAGES VIA CODEX AI...**\n**[ █████ ░ ░ ░ ░ ░ ░ ] 50%**`, 
                 edit: key 
             });
             await delay(2000);
@@ -62,7 +62,7 @@ module.exports = {
             await delay(2000);
 
             await sock.sendMessage(jid, { 
-                text: `**PINGING LIVE GPS COORDINATES USING NET HUNTER...**\n**[ ████████ ░ ░ ░ ░ ] 80%**`, 
+                text: `**PINGING LIVE GPS COORDINATES VIA NET HUNTER...**\n**[ ████████ ░ ░ ░ ░ ] 80%**`, 
                 edit: key 
             });
             await delay(2000);
