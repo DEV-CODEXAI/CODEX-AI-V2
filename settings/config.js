@@ -43,7 +43,7 @@ const config = {
 
     session: "sessions",
 
-    thumbUrl: "https://crysnovax-media-api.crysnovax.workers.dev/1772622068532-media",
+    thumbUrl: "https://media.codex-ai.workers.dev/bafb2d80-d0da-4c2c-b6be-9cbdd7edd0b7.jpg",
 
     status: {
         public: userConfig?.bot?.public ?? false,
@@ -62,7 +62,7 @@ const config = {
         owner: "This command is only for the bot owner! by 𝗖𝗢𝗗𝗘𝗫 ☠️",
         done: "Mode changed successfully! ✓𓄄",
         error: "Something went wrong!✘𓄄",
-        wait: "Please wait...⚉"
+        wait: "Please wait..."
     },
 
     settings: {
