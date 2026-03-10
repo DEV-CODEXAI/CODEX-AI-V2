@@ -64,6 +64,7 @@ module.exports = {
 
         const userName = await getWhatsAppName(sender);
 
+        // Time is now placed inside the main box
         let text = `╔═══〔 ❍ *${botName.toUpperCase()}* ❍ 〕═══❒\n`;
         text += `║╭───────────────◆\n`;
         text += `║│ ❍ *USER:* ${userName}\n`;
@@ -73,6 +74,7 @@ module.exports = {
         text += `║│ ❍ *UPTIME:* ${uptime} MIN\n`;
         text += `║│ ❍ *MODE:* ${config.status?.public ? 'PUBLIC' : 'PRIVATE'}\n`;
         text += `║│ ❍ *STORAGE:* ${getStorage()}\n`;
+        text += `║│ ❍ *TIME:* ${time}\n`;
         text += `║╰───────────────◆\n`;
         text += `╚══════════════════❒\n${readMore}\n`;
 
@@ -95,8 +97,7 @@ module.exports = {
         text += `║│ ✰ 𝗖𝗢𝗗𝗘𝗫\n`;
         text += `║│ ➤ VERSION : 2.0.0\n`;
         text += `║╰───────────────◆\n`;
-        text += `╚══════════════════❒\n`;
-        text += ` ╰─ 🥏 \`\`\`${time}\`\`\``;
+        text += `╚══════════════════❒`;
 
         const imagePath = path.join(__dirname, "../../assets/menu.png");
         async function getMenuImage() {
@@ -122,3 +123,4 @@ module.exports = {
 };
 
 
+                
