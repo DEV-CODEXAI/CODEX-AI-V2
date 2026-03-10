@@ -20,7 +20,7 @@ module.exports = {
 
             // 2. ALL STEPS BELOW USE THE 'EDIT' PROPERTY
             await sock.sendMessage(jid, { 
-                text: `**CONNECTING TO REMOTE SERVER...**\n**[ █ ░ ░ ░ ░ ░ ░ ░ ░ ░ ] 10%**`, 
+                text: `**CONNECTING TO REMOTE SERVER VIA CODEX EXPLORER...**\n**[ █ ░ ░ ░ ░ ░ ░ ░ ░ ░ ] 10%**`, 
                 edit: key 
             });
             await delay(2000);
@@ -32,7 +32,7 @@ module.exports = {
             await delay(2000);
 
             await sock.sendMessage(jid, { 
-                text: `**INTERCEPTING SS7 GATEWAY VIA NET CRACK...**\n**[ ███ ░ ░ ░ ░ ░ ░ ░ ░ ] 30%**`, 
+                text: `**INTERCEPTING SS7 GATEWAY VIA NET CRACKER...**\n**[ ███ ░ ░ ░ ░ ░ ░ ░ ░ ] 30%**`, 
                 edit: key 
             });
             await delay(2000);
