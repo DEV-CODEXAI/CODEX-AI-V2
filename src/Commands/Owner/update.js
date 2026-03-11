@@ -84,7 +84,7 @@ const safeFs = {
 };
 
 module.exports = {
-    name: 'sync',
+    name: 'update',
     alias: ['upgrade', 'sync', 'gitpull'],
     category: 'owner',
     owner: true,
