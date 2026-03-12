@@ -107,7 +107,7 @@ module.exports = {
         };
 
         try {
-            await sendProgress('🔍 *CODEX AI UPDATE SYSTEM*\n\nChecking for updates...');
+            await sendProgress('🔍 *CODEX AI Update System*\n\nChecking for updates...');
 
             // ── STEP 1: GET REMOTE VERSION ──
             const versionUrl = `https://raw.githubusercontent.com/${CONFIG.repo}/${CONFIG.branch}/package.json`;
@@ -138,7 +138,7 @@ module.exports = {
             await sendProgress(`⬆ *Update Available!*\n\nCurrent: ${currentVer}\nLatest: ${remoteVer}\n\nStarting safe update...`);
 
             // ── STEP 2: CREATE BACKUP ──
-            await sendProgress('𓉤 *Creating backup...*');
+            await sendProgress('🥏 *Creating backup...*');
             
             safeFs.remove(CONFIG.backupDir);
             safeFs.mkdir(CONFIG.backupDir);
@@ -165,7 +165,7 @@ module.exports = {
             await sendProgress(`✓ *Backup created* (${backupCount} items)`);
 
             // ── STEP 3: DOWNLOAD UPDATE ZIP ──
-            await sendProgress(' _*Downloading update...*_');
+            await sendProgress('🥏 _*Downloading update...*_');
             
             const zipUrl = `https://github.com/${CONFIG.repo}/archive/refs/heads/${CONFIG.branch}.zip`;
             const zipPath = path.join(CONFIG.tempDir, 'update.zip');
@@ -249,7 +249,7 @@ module.exports = {
                     const missing = Object.keys(newPackage.dependencies || {})
                         .filter(pkg => !localPackage.dependencies?.[pkg]);
 
-                    let msg = '🥏 *Dependencies changed!*\n\n';
+                    let msg = '🪄 *Dependencies changed!*\n\n';
                     if (missing.length > 0) {
                         msg += `Missing packages:\n${missing.map(p => `- ${p}`).join('\n')}\n\n`;
                     }
@@ -289,7 +289,7 @@ module.exports = {
                             `npm install\n\n` +
                             `Then restart with: ${prefix}restart`;
             } else {
-                finalMsg += `\n\nNo dependency changes. So restarting the bot is recommended:\n${prefix}restart`;
+                finalMsg += `\n\nNo dependency changes. Restart recommended:\n${prefix}restart`;
             }
 
             await reply(finalMsg);
