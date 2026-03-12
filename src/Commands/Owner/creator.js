@@ -2,7 +2,7 @@
 // © 2026 CODEX AI - Multi-Bot System
 module.exports = {
     name: 'creator',
-    alias: ['test', 'ping', 'update', 'alive'],
+    alias: ['test', 'ping', 'alive'],
     desc: 'Test command that works across all bots with their own prefixes',
     category: 'Owner',
     usage: '.creator',
