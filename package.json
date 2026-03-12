@@ -1,14 +1,14 @@
 {
   "name": "𝗖𝗢𝗗𝗘𝗫 𝐀𝐈",
-  "version": "2.7.9",
-  "description": "𝗖𝗢𝗗𝗘𝗫 𝐀𝐈 V2 + CRYSNOVA V2 Connection",
+  "version": "2.4.6",
+  "description": "𝗖𝗢𝗗𝗘𝗫 𝐀𝐈 V2",
   "main": "main.js",
   "type": "commonjs",
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js"
   },
-  "author": "CRYSN⚉VA ✘",
+  "author": "CODEX",
   "license": "MIT",
   "dependencies": {
     "@adiwajshing/keyed-db": "^0.2.4",
