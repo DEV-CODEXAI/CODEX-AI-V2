@@ -63,7 +63,7 @@ module.exports = {
             }).toLowerCase();
 
             // Final message in your original clean format
-            const finalMsg = `${randomReply}\n\n𓄄 \`\`\`${timeStr} WAT\`\`\``;
+            const finalMsg = `${randomReply}\n\n🥏 \`\`\`${timeStr} WAT\`\`\``;
 
             await reply(finalMsg);
 
