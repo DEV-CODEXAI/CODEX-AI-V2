@@ -27,7 +27,7 @@ module.exports = {
                 return reply('✦ 𝘾𝞗𝘿𝞢𝙓 𝘼𝙄\n❌ 𝙈𝙚𝙙𝙞𝙖 𝙩𝙤𝙤 𝙡𝙖𝙧𝙜𝙚 (𝙈𝙖𝙬 5𝙈𝘽)');
             }
 
-            const cdnUrl = 'https://media.codex-ai.workers.dev';
+            const cdnUrl = 'https://media.codex-ai.workers.dev/';
             const form = new FormData();
             form.append('file', Buffer.from(mediaBuffer.slice(0, maxSize)), {
                 filename: 'media',
