@@ -1,58 +1,39 @@
 
-// © 2026 CODEX AI - Media Upload System
 const axios = require('axios');
-const FormData = require('form-data');
 
 module.exports = {
     name: 'url',
-    alias: ['mediaurl', 'geturl'],
-    category: 'Tools',
-    desc: 'Generate a public URL from replied media',
-
-    execute: async (sock, m, { reply }) => {
+    alias: ['upload', 'mediaurl'],
+    category: 'tools',
+    desc: 'Upload media and get public URL',
+    execute: async (conn, m, { reply }) => {
         try {
-            if (!m.quoted) {
-                return reply('✦ 𝘾𝞗𝘿𝞢𝙓 𝘼𝙄\n 𝙋𝙡𝙚𝙖𝙨𝙚 𝙧𝙚𝙥𝙡𝙮 𝙩𝙤 𝙢𝙚𝙙𝙞𝙖 𝙩𝙤 𝙜𝙚𝙣𝙚𝙧𝙖𝙩𝙚 𝙐𝙍𝙇');
-            }
+            // Check for quoted media
+            if (!m.quoted) return reply('🥏 _*Reply to image/video/audio*_');
 
-            await reply('✦ 𝘾𝞗𝘿𝞢𝙓 𝘼𝙄\n📤 𝙐𝙥𝙡𝙤𝙖𝙙𝙞𝙣𝙜 𝙢𝙚𝙙𝙞𝙖...');
-
+            // Download media buffer
             const mediaBuffer = await m.quoted.download();
-            if (!mediaBuffer || mediaBuffer.length < 500) {
-                return reply('✦ 𝘾𝞗𝘿𝞢𝙓 𝘼𝙄\n❌ 𝙈𝙚𝙙𝙞𝙖 𝙙𝙤𝙬𝙣𝙡𝙤𝙖𝙙 𝙛𝙖𝙞𝙡𝙚𝙙');
-            }
+            if (!mediaBuffer) return reply('✘ Failed to download media');
 
-            const maxSize = 5 * 1024 * 1024;
-            if (mediaBuffer.length > maxSize) {
-                return reply('✦ 𝘾𝞗𝘿𝞢𝙓 𝘼𝙄\n❌ 𝙈𝙚𝙙𝙞𝙖 𝙩𝙤𝙤 𝙡𝙖𝙧𝙜𝙚 (𝙈𝙖𝙬 5𝙈𝘽)');
-            }
+            reply('🥏 _*Uploading media...*_');
 
-            const cdnUrl = 'https://media.codex-ai.workers.dev/';
-            const form = new FormData();
-            form.append('file', Buffer.from(mediaBuffer.slice(0, maxSize)), {
-                filename: 'media',
-                contentType: 'application/octet-stream'
+            // POST request to the worker API
+            const response = await axios.post('https://media.codex-ai.workers.dev/upload', mediaBuffer, {
+                headers: {
+                    'content-type': m.quoted.mimetype || 'application/octet-stream'
+                },
+                timeout: 60000
             });
 
-            const response = await axios.post(cdnUrl, form, {
-                headers: form.getHeaders(),
-                timeout: 30000
-            });
+            // Validate response data
+            if (!response.data || !response.data.url) return reply('✘ Upload failed');
 
-            if (!response.data?.url) {
-                return reply('✦ 𝘾𝞗𝘿𝞢𝙓 𝘼𝙄\n❌ 𝘾𝘿𝙉 𝙪𝙥𝙡𝙤𝙖𝙙 𝙛𝙖𝙞𝙡𝙚𝙙');
-            }
+            // Return success message with URL
+            reply('🥏 *UPLOAD SUCCESS*\n\n🪄 URL:\n' + response.data.url);
 
-            let successMsg = `✦ 𝘾𝞗𝘿𝞢𝙓 𝘼𝙄\n\n`;
-            successMsg += `✦ 𝙈𝙚𝙙𝙞𝙖 𝙐𝙥𝙡𝙤𝙖𝙙𝙚𝙙\n\n`;
-            successMsg += `🐾 𝙇𝙞𝙣𝙠:\n${response.data.url}\n\n`;
-            successMsg += `🌐 𝘾𝞗𝘿𝞢𝙓 𝘾𝘿𝙉`;
-
-            return reply(successMsg);
-
-        } catch (err) {
-            console.error('URL Generation Error:', err);
-            return reply('✦ 𝘾𝞗𝘿𝞢𝙓 𝘼𝙄\n❌ 𝙐𝙍𝙇 𝙜𝙚𝙣𝙚𝙧𝙖𝙩𝙞𝙤𝙣 𝙛𝙖𝙞𝙡𝙚𝙙');
+        } catch (error) {
+            console.error(error);
+            reply('✘ Media upload failed');
         }
     }
 };
