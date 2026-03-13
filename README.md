@@ -244,7 +244,7 @@ REMEMBER TO GO BACK TO YOUR SERVER  AFTER PAIRING WITH WHATSAPP TO VERIFY YOUR C
 ## FREE PANEL:
 bot hosting net (https://Bot-hosting.net)
       OR
-spaceify.eu
+spaceify (https://spaceify.eu)
 
 For detailed setup and command addition, check the tutorial videos!
 
