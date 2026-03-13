@@ -226,7 +226,7 @@ async function main() {
     await setupOwnerNumber();
     rl.close();
 
-    console.log(`\n${styles.colors.green}🎉 Codex is starting now!${styles.colors.reset}`);
+    console.log(`\n${styles.colors.green}🎉 CODEX SUCCESSFULLY DEPLOYED ON PTERODACTYL (PANEL)!${styles.colors.reset}`);
     const child = spawn('node', [ENTRY_FILE], { cwd: PROJECT_DIR, stdio: 'inherit', shell: true });
     child.on('close', (code) => process.exit(code));
 }
