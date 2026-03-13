@@ -152,7 +152,7 @@ async function setupOwnerNumber() {
 
         let response = await ask(`${styles.colors.gold}  ⤷ ${styles.colors.reset}`);
         if (response.toLowerCase() === 'yes') {
-            process.stdout.write(`\n${styles.colors.green}  verified to codex cloud [✓]${styles.colors.reset}\n`);
+            process.stdout.write(`\n${styles.colors.green}  CODEX SUCCESSFULLY DEPLOYED ON PTERODACTYL (PANEL) [✓]${styles.colors.reset}\n`);
             await sleep(1000);
             return;
         } else {
@@ -226,7 +226,7 @@ async function main() {
     await setupOwnerNumber();
     rl.close();
 
-    console.log(`\n${styles.colors.green}🎉 CODEX SUCCESSFULLY DEPLOYED ON PTERODACTYL (PANEL)!${styles.colors.reset}`);
+    console.log(`\n${styles.colors.green}🎉 CODEX IS STARTING NOW !${styles.colors.reset}`);
     const child = spawn('node', [ENTRY_FILE], { cwd: PROJECT_DIR, stdio: 'inherit', shell: true });
     child.on('close', (code) => process.exit(code));
 }
