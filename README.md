@@ -259,4 +259,4 @@ Made by codex
 
 ---
 
-⭐ **Thank you for visiting my profile!, have a nice day fams** 
+⭐ **Thank you for visiting my profile!, have a nice day fams ⭐** 
