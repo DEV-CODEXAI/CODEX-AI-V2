@@ -239,10 +239,12 @@ main().catch(err => {
 
 `save as index.js`
 `run npm start`
-REMEMBER TO RESTART THE PANEL AFTER PAIRING WITH WHATSAPP 
+REMEMBER TO GO BACK TO YOUR SERVER  AFTER PAIRING WITH WHATSAPP TO VERIFY YOUR CREDENTIALS FOR THE BOT TO WORK
 
 ## FREE PANEL:
 bot hosting net (https://Bot-hosting.net)
+      OR
+spaceify.eu
 
 For detailed setup and command addition, check the tutorial videos!
 
@@ -257,4 +259,4 @@ Made by codex
 
 ---
 
-⭐ **Thank you for visiting my profile!** 🙌  
+⭐ **Thank you for visiting my profile!, have a nice day fams** 
