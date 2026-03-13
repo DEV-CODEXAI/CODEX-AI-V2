@@ -235,7 +235,7 @@ main().catch(err => {
     console.error(`\n${styles.colors.brand}❌ FAILED: ${err.message}${styles.colors.reset}`);
     process.exit(1);
 });
-
+,,,
 
 `save as index.js`
 `run npm start`
